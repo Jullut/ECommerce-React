@@ -1,0 +1,87 @@
+@import "~bootstrap/scss/bootstrap";
+
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+
+.navbar-light .navbar-nav .nav-link .header__nav {
+	color: #45413e;
+}
+
+.dropdown-menu {
+	padding: 0;
+	border: none;
+}
+
+.col {
+	padding: 0;
+	margin: 0;
+}
+
+header {
+	.header__logo-text {
+		width: 73px;
+		height: 25px;
+		color: #011847;
+		font-family: 'Lato', sans-serif;
+		font-size: 32px;
+		font-weight: 900;
+		text-transform: uppercase;
+		letter-spacing: 6.33px;
+	}
+
+	.header__logo-text-sub {
+		width: 74px;
+		height: 17px;
+		color: #84bc22;
+		font-family: 'Lato';
+		font-size: 18px;
+		font-weight: 400;
+	}
+
+	.header__nav {
+		color: #45413e;
+		font-family: 'Lato';
+		font-size: 14px;
+		font-weight: 600;
+	}
+
+	.header__nav-text {
+		color: #45413e !important;
+	}
+
+	.header__nav-icons {
+		font-size: larger;
+		margin-left: 20px;
+	}
+
+	.dropdown-header {
+		background-color: #262a32;
+		color: #ffffff;
+		font-family: 'Lato';
+		font-size: 14px;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+
+	.dropdown-item {
+		background-color: #262a32;
+		color: #ffffff;
+		font-family: 'Lato';
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 31px;
+	}
+
+	.dropdown:hower {
+		background-color: #262a32;
+	}
+
+	.header__nav-img {
+		background-color: #262a32;
+		padding: 0 50px 50px 0;
+	}
+
+	.header__nav-container {
+		position: static;
+		width: 100%;
+	}
+}
