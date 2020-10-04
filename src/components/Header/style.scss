@@ -1,6 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
 
-@import url('https://fonts.googleapis.com/css2?family=Lato');
+@import 'https://fonts.googleapis.com/css2?family=Lato';
 
 .navbar-light .navbar-nav .nav-link .header__nav {
 	color: #45413e;
@@ -14,6 +14,10 @@
 .col {
 	padding: 0;
 	margin: 0;
+}
+
+.navbar {
+	padding-bottom: 0;
 }
 
 header {
@@ -39,7 +43,7 @@ header {
 
 	.header__nav {
 		color: #45413e;
-		font-family: 'Lato';
+
 		font-size: 14px;
 		font-weight: 600;
 	}
@@ -56,7 +60,7 @@ header {
 	.dropdown-header {
 		background-color: #262a32;
 		color: #ffffff;
-		font-family: 'Lato';
+
 		font-size: 14px;
 		font-weight: 600;
 		text-transform: uppercase;
@@ -65,7 +69,7 @@ header {
 	.dropdown-item {
 		background-color: #262a32;
 		color: #ffffff;
-		font-family: 'Lato';
+
 		font-size: 16px;
 		font-weight: 400;
 		line-height: 31px;
@@ -76,12 +80,23 @@ header {
 	}
 
 	.header__nav-img {
-		background-color: #262a32;
-		padding: 0 50px 50px 0;
+		height: 20em;
+		width: 20em;
 	}
 
 	.header__nav-container {
 		position: static;
-		width: 100%;
+		min-width: 100vw;
+		background-color: #262a32;
+		padding: 2% 15%;
+	}
+
+	.navbar-light .navbar-nav .show > .nav-link,
+	.navbar-light .navbar-nav .active > .nav-link,
+	.navbar-light .navbar-nav .nav-link.show,
+	.navbar-light .navbar-nav .nav-link.active .header__services {
+		background-color: #262a32;
+		color: #ffffff;
+		height: 150%;
 	}
 }

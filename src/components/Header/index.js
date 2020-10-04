@@ -18,8 +18,8 @@ const Header = () => {
 				<Container>
 					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 					<Navbar.Brand href="#">
-						<img src={logo} className="d-inline-block align-top mr-2" alt="OSF logo" />
-						<div className="d-inline-block align-middle">
+						<img src={logo} className="header__logo-img d-inline-block align-top mr-2" alt="OSF logo" />
+						<div className="d-md-inline-block align-middle d-none">
 							<span className="header__logo-text d-block mb-2">OSF</span>
 							<span className="header__logo-text-sub d-block mt-2">Academy</span>
 						</div>
@@ -27,61 +27,81 @@ const Header = () => {
 
 					<Navbar.Collapse id="responsive-navbar-nav">
 						<Nav className="header__nav ml-auto align-middle" variant="tabs">
-							<NavDropdown className="position-static" title="SERVICES" id="collasible-nav-dropdown">
+							<NavDropdown
+								className="position-static header__services"
+								title="SERVICES"
+								id="collasible-nav-dropdown"
+							>
 								<div className="header__nav-container w-100">
 									<Row>
-										<Col>
-											<NavDropdown.Header className="header__nav-dropdown-title">
-												PRODUCT CATEGORIES
-											</NavDropdown.Header>
+										<Col xs={7}>
+											<Row>
+												<Col>
+													<NavDropdown.Header className="header__nav-dropdown-title">
+														PRODUCT CATEGORIES
+													</NavDropdown.Header>
+												</Col>
+											</Row>
+
+											<Row>
+												<Col>
+													<NavDropdown.Item href="#">Accessories</NavDropdown.Item>
+													<NavDropdown.Item href="#">Alcohol</NavDropdown.Item>
+													<NavDropdown.Item href="#">Art</NavDropdown.Item>
+													<NavDropdown.Item href="#">Books</NavDropdown.Item>
+													<NavDropdown.Item href="#">Drink</NavDropdown.Item>
+													<NavDropdown.Item href="#">Electronics</NavDropdown.Item>
+													<NavDropdown.Item href="#">Flowers & Plants</NavDropdown.Item>
+													<NavDropdown.Item href="#">Food</NavDropdown.Item>
+												</Col>
+
+												<Col>
+													<NavDropdown.Item href="#">Gadgets</NavDropdown.Item>
+													<NavDropdown.Item href="#">Garden</NavDropdown.Item>
+													<NavDropdown.Item href="#">Grocery</NavDropdown.Item>
+													<NavDropdown.Item href="#">Home</NavDropdown.Item>
+													<NavDropdown.Item href="#">Jewelry</NavDropdown.Item>
+													<NavDropdown.Item href="#">Kids & Baby</NavDropdown.Item>
+													<NavDropdown.Item href="#">Men's Fashion</NavDropdown.Item>
+													<NavDropdown.Item href="#">Mobile</NavDropdown.Item>
+												</Col>
+
+												<Col>
+													<NavDropdown.Item href="#">Motorcycles</NavDropdown.Item>
+													<NavDropdown.Item href="#">Movies</NavDropdown.Item>
+													<NavDropdown.Item href="#">Music</NavDropdown.Item>
+													<NavDropdown.Item href="#">Office</NavDropdown.Item>
+													<NavDropdown.Item href="#">Pets</NavDropdown.Item>
+													<NavDropdown.Item href="#">Romantic</NavDropdown.Item>
+													<NavDropdown.Item href="#">Sport</NavDropdown.Item>
+													<NavDropdown.Item href="#">Toys</NavDropdown.Item>
+												</Col>
+											</Row>
 										</Col>
+
 										<Col>
-											<NavDropdown.Header className="header__nav-dropdown-title">
-												SALE
-											</NavDropdown.Header>
+											<Row>
+												<Col>
+													<NavDropdown.Header className="header__nav-dropdown-title">
+														SALE
+													</NavDropdown.Header>
+												</Col>
+											</Row>
+
+											<Row>
+												<Col>
+													<NavDropdown.Item href="#">Accessories</NavDropdown.Item>
+													<NavDropdown.Item href="#">Alcohol</NavDropdown.Item>
+													<NavDropdown.Item href="#">Art</NavDropdown.Item>
+													<NavDropdown.Item href="#">Books</NavDropdown.Item>
+													<NavDropdown.Item href="#">Drink</NavDropdown.Item>
+													<NavDropdown.Item href="#">Electronics</NavDropdown.Item>
+													<NavDropdown.Item href="#">Flowers & Plants</NavDropdown.Item>
+													<NavDropdown.Item href="#">Food</NavDropdown.Item>
+												</Col>
+											</Row>
 										</Col>
-									</Row>
-									<Row>
-										<Col>
-											<NavDropdown.Item href="#">Accessories</NavDropdown.Item>
-											<NavDropdown.Item href="#">Alcohol</NavDropdown.Item>
-											<NavDropdown.Item href="#">Art</NavDropdown.Item>
-											<NavDropdown.Item href="#">Books</NavDropdown.Item>
-											<NavDropdown.Item href="#">Drink</NavDropdown.Item>
-											<NavDropdown.Item href="#">Electronics</NavDropdown.Item>
-											<NavDropdown.Item href="#">Flowers & Plants</NavDropdown.Item>
-											<NavDropdown.Item href="#">Food</NavDropdown.Item>
-										</Col>
-										<Col>
-											<NavDropdown.Item href="#">Gadgets</NavDropdown.Item>
-											<NavDropdown.Item href="#">Garden</NavDropdown.Item>
-											<NavDropdown.Item href="#">Grocery</NavDropdown.Item>
-											<NavDropdown.Item href="#">Home</NavDropdown.Item>
-											<NavDropdown.Item href="#">Jewelry</NavDropdown.Item>
-											<NavDropdown.Item href="#">Kids & Baby</NavDropdown.Item>
-											<NavDropdown.Item href="#">Men's Fashion</NavDropdown.Item>
-											<NavDropdown.Item href="#">Mobile</NavDropdown.Item>
-										</Col>
-										<Col>
-											<NavDropdown.Item href="#">Motorcycles</NavDropdown.Item>
-											<NavDropdown.Item href="#">Movies</NavDropdown.Item>
-											<NavDropdown.Item href="#">Music</NavDropdown.Item>
-											<NavDropdown.Item href="#">Office</NavDropdown.Item>
-											<NavDropdown.Item href="#">Pets</NavDropdown.Item>
-											<NavDropdown.Item href="#">Romantic</NavDropdown.Item>
-											<NavDropdown.Item href="#">Sport</NavDropdown.Item>
-											<NavDropdown.Item href="#">Toys</NavDropdown.Item>
-										</Col>
-										<Col>
-											<NavDropdown.Item href="#">Accessories</NavDropdown.Item>
-											<NavDropdown.Item href="#">Alcohol</NavDropdown.Item>
-											<NavDropdown.Item href="#">Art</NavDropdown.Item>
-											<NavDropdown.Item href="#">Books</NavDropdown.Item>
-											<NavDropdown.Item href="#">Drink</NavDropdown.Item>
-											<NavDropdown.Item href="#">Electronics</NavDropdown.Item>
-											<NavDropdown.Item href="#">Flowers & Plants</NavDropdown.Item>
-											<NavDropdown.Item href="#">Food</NavDropdown.Item>
-										</Col>
+
 										<Col>
 											<img src={nav} rounded className="header__nav-img" />
 										</Col>
