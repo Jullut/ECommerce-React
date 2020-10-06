@@ -1,0 +1,44 @@
+@import "~bootstrap/scss/bootstrap";
+
+.carousel-control-prev-icon {
+	display: none;
+}
+
+.carousel-control-next-icon {
+	display: none;
+}
+
+.carousel-control-prev {
+	display: none;
+}
+
+.carousel-control-next {
+	display: none;
+}
+
+.carousel-indicators li {
+	border-radius: 50%;
+	width: 8px;
+	height: 8px;
+	margin-right: 15px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.carousel-indicators .active {
+	background-color: transparent;
+	border: 3px solid #ffffff;
+	margin-top: 7px;
+}
+
+.carousel-caption {
+	left: 5%;
+	right: 5%;
+	top: 10%;
+}
+
+.card {
+	border: none;
+}

@@ -1,5 +1,7 @@
 import React from 'react';
 import './style.scss';
+import styles from './Header.module.scss';
+import cx from 'classnames';
 import logo from './img/logo.png';
 import nav from './img/nav_img.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,33 +15,27 @@ import Col from 'react-bootstrap/Col';
 
 const Header = () => {
 	return (
-		<header className="header__style">
+		<header>
 			<Navbar collapseOnSelect expand="lg">
 				<Container>
 					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 					<Navbar.Brand href="#">
-						<img src={logo} className="header__logo-img d-inline-block align-top mr-2" alt="OSF logo" />
+						<img src={logo} className="d-inline-block align-top mr-2" alt="OSF logo" />
 						<div className="d-md-inline-block align-middle d-none">
-							<span className="header__logo-text d-block mb-2">OSF</span>
-							<span className="header__logo-text-sub d-block mt-2">Academy</span>
+							<span className={cx(styles.logoText, 'd-block pb-2')}>OSF</span>
+							<span className={cx(styles.logoTextSub, 'd-block pt-2')}>Academy</span>
 						</div>
 					</Navbar.Brand>
 
 					<Navbar.Collapse id="responsive-navbar-nav">
-						<Nav className="header__nav ml-auto align-middle" variant="tabs">
-							<NavDropdown
-								className="position-static header__services"
-								title="SERVICES"
-								id="collasible-nav-dropdown"
-							>
-								<div className="header__nav-container w-100">
+						<Nav className={cx(styles.nav, 'ml-auto align-middle')} variant="tabs">
+							<NavDropdown className="position-static" title="SERVICES" id="collasible-nav-dropdown">
+								<div className={styles.navContainer}>
 									<Row>
 										<Col xs={7}>
 											<Row>
 												<Col>
-													<NavDropdown.Header className="header__nav-dropdown-title">
-														PRODUCT CATEGORIES
-													</NavDropdown.Header>
+													<NavDropdown.Header>PRODUCT CATEGORIES</NavDropdown.Header>
 												</Col>
 											</Row>
 
@@ -82,9 +78,7 @@ const Header = () => {
 										<Col>
 											<Row>
 												<Col>
-													<NavDropdown.Header className="header__nav-dropdown-title">
-														SALE
-													</NavDropdown.Header>
+													<NavDropdown.Header>SALE</NavDropdown.Header>
 												</Col>
 											</Row>
 
@@ -103,42 +97,56 @@ const Header = () => {
 										</Col>
 
 										<Col>
-											<img src={nav} rounded className="header__nav-img" />
+											<img src={nav} rounded className={cx(styles.navImg, 'd-none d-md-block')} />
 										</Col>
 									</Row>
 								</div>
 							</NavDropdown>
-							<Nav.Link className="header__nav-text" href="#">
-								COMPANY
-							</Nav.Link>
-							<Nav.Link className="header__nav-text" href="#">
-								LIBRARY
-							</Nav.Link>
-							<Nav.Link className="header__nav-text" href="#">
-								CONTACT US
-							</Nav.Link>
-							<NavDropdown title="EN" id="collasible-nav-dropdown">
+							<Nav.Item>
+								<Nav.Link className={styles.navText} href="#">
+									COMPANY
+								</Nav.Link>
+							</Nav.Item>
+							<Nav.Item>
+								<Nav.Link className={styles.navText} href="#">
+									LIBRARY
+								</Nav.Link>
+							</Nav.Item>
+							<Nav.Item>
+								<Nav.Link className={styles.navText} href="#">
+									CONTACT US
+								</Nav.Link>
+							</Nav.Item>
+							<NavDropdown title="EN" id="collasible-nav-dropdown" className="d-md-block d-none">
 								<NavDropdown.Item href="#">RU</NavDropdown.Item>
 								<NavDropdown.Item href="#">UA</NavDropdown.Item>
 							</NavDropdown>
-							<NavDropdown title="$ US" id="collasible-nav-dropdown">
+							<NavDropdown title="$ US" id="collasible-nav-dropdown" className="d-md-block d-none">
 								<NavDropdown.Item href="#">RUB</NavDropdown.Item>
 								<NavDropdown.Item href="#">UAN</NavDropdown.Item>
 							</NavDropdown>
 						</Nav>
 						<Nav className="ml-5">
-							<Nav.Link className="header__nav-icons" href="#">
-								<FontAwesomeIcon icon={faSearch} />
-							</Nav.Link>
-							<Nav.Link className="header__nav-icons" href="#">
-								<FontAwesomeIcon icon={faUser} />
-							</Nav.Link>
-							<Nav.Link className="header__nav-icons" href="#">
-								<FontAwesomeIcon icon={faHeart} />
-							</Nav.Link>
-							<Nav.Link className="header__nav-icons" href="#">
-								<FontAwesomeIcon icon={faShoppingBag} />
-							</Nav.Link>
+							<Nav.Item>
+								<Nav.Link className={cx(styles.navIcons, 'd-none d-md-block')} href="#">
+									<FontAwesomeIcon icon={faSearch} />
+								</Nav.Link>
+							</Nav.Item>
+							<Nav.Item>
+								<Nav.Link className={cx(styles.navIcons, 'd-none d-md-block')} href="#">
+									<FontAwesomeIcon icon={faUser} />
+								</Nav.Link>
+							</Nav.Item>
+							<Nav.Item>
+								<Nav.Link className={cx(styles.navIcons, 'd-none d-md-block')} href="#">
+									<FontAwesomeIcon icon={faHeart} />
+								</Nav.Link>
+							</Nav.Item>
+							<Nav.Item>
+								<Nav.Link className={cx(styles.navIcons, 'd-none d-md-block')} href="#">
+									<FontAwesomeIcon icon={faShoppingBag} />
+								</Nav.Link>
+							</Nav.Item>
 						</Nav>
 					</Navbar.Collapse>
 				</Container>

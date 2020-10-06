@@ -1,0 +1,46 @@
+@import 'https://fonts.googleapis.com/css2?family=Lato';
+
+.logoText {
+	width: 73px;
+	height: 25px;
+	color: #011847;
+	font-size: 32px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 6.33px;
+}
+
+.logoTextSub {
+	width: 74px;
+	height: 17px;
+	color: #84bc22;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.nav {
+	color: #45413e;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.navText {
+	color: #45413e !important;
+}
+
+.navIcons {
+	font-size: larger;
+	margin-left: 20px;
+}
+
+.navImg {
+	height: 20em;
+	width: 20em;
+}
+
+.navContainer {
+	position: static;
+	min-width: 100vw;
+	background-color: #262a32;
+	padding: 2% 15%;
+}
