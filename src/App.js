@@ -4,6 +4,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import Header from './components//Header/index';
 import Sales from './components//Sales/index';
+import PopularItems from './components//PopularItems/index';
 
 library.add(fab);
 
@@ -16,6 +17,7 @@ function App() {
 		<div className="App">
 			<Header />
 			<Sales />
+			<PopularItems />
 		</div>
 	);
 }

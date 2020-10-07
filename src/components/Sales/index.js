@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.scss';
+import '../../Assets/globalStyles/style.scss';
 import styles from './Sales.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import cx from 'classnames';
@@ -105,7 +105,7 @@ const Sales = () => {
 
 					<Col>
 						<Card>
-							<Card.Img variant="top" src={summer} />
+							<Card.Img variant="top" src={summer} className={styles.imgSales} />
 							<Card.Body>
 								<Card.Title>
 									<span className={styles.titleSales}>Follow us on Facebook</span>

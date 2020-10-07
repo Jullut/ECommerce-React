@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.scss';
+import '../../Assets/globalStyles/style.scss';
 import styles from './Header.module.scss';
 import cx from 'classnames';
 import logo from './img/logo.png';
