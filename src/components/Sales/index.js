@@ -1,12 +1,7 @@
 import React from 'react';
-import '../../Assets/globalStyles/style.scss';
 import styles from './Sales.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import cx from 'classnames';
-import bg from './img/sales-bg.png';
-import bg1 from './img/sales-bg1.png';
-import bg2 from './img/sales-bg2.png';
-import summer from './img/summer-sales.png';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -21,7 +16,7 @@ const Sales = () => {
 					<Col xs={9}>
 						<Carousel>
 							<Carousel.Item>
-								<img className="d-block w-100" src={bg} alt="First slide" />
+								<img className="d-block w-100" src="/img/sales/sales-bg.png" alt="First slide" />
 								<Carousel.Caption>
 									<h3 className={cx(styles.titleCarousel, styles.leftCarousel)}>
 										{' '}
@@ -37,7 +32,11 @@ const Sales = () => {
 								</Carousel.Caption>
 							</Carousel.Item>
 							<Carousel.Item>
-								<img className={cx(styles.imgBg, 'd-block w-100')} src={bg1} alt="Second slide" />
+								<img
+									className={cx(styles.imgBg, 'd-block w-100')}
+									src="/img/sales/sales-bg1.png"
+									alt="Second slide"
+								/>
 								<Carousel.Caption>
 									<h3 className={cx(styles.titleCarousel, styles.middleCarousel)}>
 										{' '}
@@ -53,7 +52,11 @@ const Sales = () => {
 								</Carousel.Caption>
 							</Carousel.Item>
 							<Carousel.Item>
-								<img className={cx(styles.imgBg, 'd-block w-100')} src={bg2} alt="Third slide" />
+								<img
+									className={cx(styles.imgBg, 'd-block w-100')}
+									src="/img/sales/sales-bg2.png"
+									alt="Third slide"
+								/>
 								<Carousel.Caption>
 									<h3 className={cx(styles.titleCarousel, styles.rightCarousel)}>
 										{' '}
@@ -69,7 +72,7 @@ const Sales = () => {
 								</Carousel.Caption>
 							</Carousel.Item>
 							<Carousel.Item>
-								<img className="d-block w-100" src={bg} alt="Fourth slide" />
+								<img className="d-block w-100" src="/img/sales/sales-bg.png" alt="Fourth slide" />
 								<Carousel.Caption>
 									<h3 className={cx(styles.titleCarousel, styles.leftCarousel)}>
 										{' '}
@@ -85,7 +88,11 @@ const Sales = () => {
 								</Carousel.Caption>
 							</Carousel.Item>
 							<Carousel.Item>
-								<img className={cx(styles.imgBg, 'd-block w-100')} src={bg1} alt="Fifth slide" />
+								<img
+									className={cx(styles.imgBg, 'd-block w-100')}
+									src="/img/sales/sales-bg1.png"
+									alt="Fifth slide"
+								/>
 								<Carousel.Caption>
 									<h3 className={cx(styles.titleCarousel, styles.middleCarousel)}>
 										{' '}
@@ -105,7 +112,7 @@ const Sales = () => {
 
 					<Col>
 						<Card>
-							<Card.Img variant="top" src={summer} className={styles.imgSales} />
+							<Card.Img variant="top" src="/img/sales/summer-sales.png" className={styles.imgSales} />
 							<Card.Body>
 								<Card.Title>
 									<span className={styles.titleSales}>Follow us on Facebook</span>

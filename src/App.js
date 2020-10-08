@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.scss';
+import './assets/globalStyles/style.scss';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import Header from './components//Header/index';

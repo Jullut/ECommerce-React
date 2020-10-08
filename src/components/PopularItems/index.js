@@ -1,22 +1,46 @@
 import React from 'react';
-import '../../Assets/globalStyles/style.scss';
 import styles from './PopularItems.module.scss';
-import item1 from './img/item1.png';
-import item2 from './img/item2.png';
-import item3 from './img/item3.png';
-import item4 from './img/item4.png';
-import item5 from './img/item5.png';
-import item6 from './img/item6.png';
-import item7 from './img/item7.png';
-import item8 from './img/item8.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUndoAlt, faHeart, faPlus } from '@fortawesome/free-solid-svg-icons';
-import cx from 'classnames';
+import { faUndoAlt } from '@fortawesome/free-solid-svg-icons';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import CardColumns from 'react-bootstrap/CardColumns';
+import CustomCard from '../CustomCard';
+
+const cards = [
+	{
+		title: 'Kristina Dam Oak Table With White Marble Top',
+		price: '$ 799.55',
+		cardImg: '/img/popularItems/item1.png'
+	},
+	{
+		title: 'Activate Facial Mask and Charcoal Soap',
+		price: '$ 129.55',
+		cardImg: '/img/popularItems/item3.png'
+	},
+	{
+		title: 'Cocktail Table Walnut | YES',
+		price: '$ 299.99',
+		cardImg: '/img/popularItems/item4.png'
+	},
+	{
+		title: 'Hay - About A Lounge Chair AAL 93',
+		price: '$ 659.55',
+		cardImg: '/img/popularItems/item5.png'
+	},
+	{
+		title: 'TORY DESK CALENDAR',
+		price: '$ 410.99',
+		cardImg: '/img/popularItems/item6.png'
+	},
+	{
+		title: 'CH445 Wing Chair on SUITE NY',
+		price: '$ 330.55',
+		cardImg: '/img/popularItems/item7.png'
+	}
+];
 
 const PopularItems = () => {
 	return (
@@ -33,124 +57,38 @@ const PopularItems = () => {
 				<Row className={styles.firstRow}>
 					<Col>
 						<CardColumns>
-							<Card className={styles.card}>
-								<Card.Img className={styles.cardImg} variant="top" src={item1} />
-								<Card.Body>
-									<Card.Title className={styles.cardTitle}>
-										Kristina Dam Oak Table With White Marble Top
-									</Card.Title>
-									<Card.Text className={styles.cardPrice}>$ 799.55</Card.Text>
-								</Card.Body>
-								<div className={styles.overlay}>
-									<div className={styles.plus}>
-										<FontAwesomeIcon icon={faPlus} />
-									</div>
-									<div className={styles.heart}>
-										<FontAwesomeIcon icon={faHeart} />
-									</div>
-								</div>
-							</Card>
-
 							<Card>
-								<Card.Img className={styles.cardImg} variant="top" src={item2} />
+								<Card.Img className={styles.cardImg} variant="top" src="/img/popularItems/item2.png" />
 								<Card.Body>
 									<Card.Title className={styles.cardTitle}>
 										Hay - About A Lounge Chair AAL 93
 									</Card.Title>
-									<Card.Text className={styles.cardPrice}>$659.55</Card.Text>
+									<Card.Text>
+										<button className={styles.cardBtn}>
+											<span className={styles.cardBtnPrice}>$659.55</span>
+											<span className={styles.cardBtnText}>Buy now</span>
+										</button>
+									</Card.Text>
 								</Card.Body>
 							</Card>
 
-							<Card className={styles.card}>
-								<Card.Img className={styles.cardImg} variant="top" src={item3} />
-								<Card.Body>
-									<Card.Title className={styles.cardTitle}>
-										Activate Facial Mask and Charcoal Soap{' '}
-									</Card.Title>
-									<Card.Text className={styles.cardPrice}>$ 129.55</Card.Text>
-								</Card.Body>
-								<div className={styles.overlay}>
-									<div className={styles.plus}>
-										<FontAwesomeIcon icon={faPlus} />
-									</div>
-									<div className={styles.heart}>
-										<FontAwesomeIcon icon={faHeart} />
-									</div>
-								</div>
-							</Card>
+							{cards.map(({ title, price, cardImg }) => (
+								<CustomCard cardImg={cardImg} title={title} price={price} />
+							))}
 
-							<Card className={styles.card}>
-								<Card.Img className={styles.cardImg} variant="top" src={item4} />
-								<Card.Body>
-									<Card.Title className={cx(styles.cardTitle, styles.height)}>
-										Cocktail Table Walnut | YES
-									</Card.Title>
-									<Card.Text className={styles.cardPrice}>$ 299.99</Card.Text>
-								</Card.Body>
-								<div className={styles.overlay}>
-									<div className={styles.plus}>
-										<FontAwesomeIcon icon={faPlus} />
+							<Card className={styles.cardBody}>
+								<Card.Img className={styles.cardImg} variant="top" src="/img/popularItems/item8.png" />
+								<Card.ImgOverlay>
+									<div className={styles.imgContainer}>
+										<p className={styles.imgText}>
+											My dragons are misbehaving again. Unbelieveable!
+										</p>
+										<p className={styles.imgTime}>
+											<img src="/img/popularItems/img-icon.png" className={styles.imgIcon} />5h
+											ago
+										</p>
 									</div>
-									<div className={styles.heart}>
-										<FontAwesomeIcon icon={faHeart} />
-									</div>
-								</div>
-							</Card>
-
-							<Card className={styles.card}>
-								<Card.Img className={styles.cardImg} variant="top" src={item5} />
-								<Card.Body>
-									<Card.Title className={styles.cardTitle}>
-										Hay - About A Lounge Chair AAL 93
-									</Card.Title>
-									<Card.Text className={styles.cardPrice}>$ 659.55</Card.Text>
-								</Card.Body>
-								<div className={styles.overlay}>
-									<div className={styles.plus}>
-										<FontAwesomeIcon icon={faPlus} />
-									</div>
-									<div className={styles.heart}>
-										<FontAwesomeIcon icon={faHeart} />
-									</div>
-								</div>
-							</Card>
-
-							<Card className={styles.card}>
-								<Card.Img className={styles.cardImg} variant="top" src={item6} />
-								<Card.Body>
-									<Card.Title className={cx(styles.cardTitle, styles.height)}>
-										TORY DESK CALENDAR
-									</Card.Title>
-									<Card.Text className={styles.cardPrice}>$ 410.99</Card.Text>
-								</Card.Body>
-								<div className={styles.overlay}>
-									<div className={styles.plus}>
-										<FontAwesomeIcon icon={faPlus} />
-									</div>
-									<div className={styles.heart}>
-										<FontAwesomeIcon icon={faHeart} />
-									</div>
-								</div>
-							</Card>
-
-							<Card className={styles.card}>
-								<Card.Img className={styles.cardImg} variant="top" src={item7} />
-								<Card.Body>
-									<Card.Title className={styles.cardTitle}>CH445 Wing Chair on SUITE NY</Card.Title>
-									<Card.Text className={styles.cardPrice}>$ 330.55</Card.Text>
-								</Card.Body>
-								<div className={styles.overlay}>
-									<div className={styles.plus}>
-										<FontAwesomeIcon icon={faPlus} />
-									</div>
-									<div className={styles.heart}>
-										<FontAwesomeIcon icon={faHeart} />
-									</div>
-								</div>
-							</Card>
-
-							<Card>
-								<Card.Img className={styles.cardImg} variant="top" src={item8} />
+								</Card.ImgOverlay>
 							</Card>
 						</CardColumns>
 					</Col>

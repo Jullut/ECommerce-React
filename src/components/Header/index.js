@@ -1,9 +1,6 @@
 import React from 'react';
-import '../../Assets/globalStyles/style.scss';
 import styles from './Header.module.scss';
 import cx from 'classnames';
-import logo from './img/logo.png';
-import nav from './img/nav_img.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faSearch, faHeart, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 import Navbar from 'react-bootstrap/Navbar';
@@ -20,7 +17,7 @@ const Header = () => {
 				<Container>
 					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 					<Navbar.Brand href="#">
-						<img src={logo} className="d-inline-block align-top mr-2" alt="OSF logo" />
+						<img src="/img/header/logo.png" className="d-inline-block align-top mr-2" alt="OSF logo" />
 						<div className="d-md-inline-block align-middle d-none">
 							<span className={cx(styles.logoText, 'd-block pb-2')}>OSF</span>
 							<span className={cx(styles.logoTextSub, 'd-block pt-2')}>Academy</span>
@@ -97,7 +94,11 @@ const Header = () => {
 										</Col>
 
 										<Col>
-											<img src={nav} rounded className={cx(styles.navImg, 'd-none d-md-block')} />
+											<img
+												src="/img/header/nav_img.png"
+												rounded
+												className={cx(styles.navImg, 'd-none d-md-block')}
+											/>
 										</Col>
 									</Row>
 								</div>
