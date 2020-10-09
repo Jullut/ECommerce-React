@@ -3,7 +3,6 @@ import '../../assets/globalStyles/style.scss';
 import styles from './CustomCard.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faPlus } from '@fortawesome/free-solid-svg-icons';
-import cx from 'classnames';
 import Card from 'react-bootstrap/Card';
 
 const CustomCard = ({ cardImg, title, price }) => {

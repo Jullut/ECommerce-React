@@ -14,7 +14,7 @@ const Sales = () => {
 			<Container>
 				<Row>
 					<Col xs={9}>
-						<Carousel>
+						<Carousel prevIcon={null} nextIcon={null}>
 							<Carousel.Item>
 								<img className="d-block w-100" src="/img/sales/sales-bg.png" alt="First slide" />
 								<Carousel.Caption>

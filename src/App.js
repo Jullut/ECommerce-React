@@ -3,9 +3,10 @@ import './App.scss';
 import './assets/globalStyles/style.scss';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import Header from './components//Header/index';
-import Sales from './components//Sales/index';
-import PopularItems from './components//PopularItems/index';
+import Header from './components//Header';
+import Sales from './components//Sales';
+import PopularItems from './components//PopularItems';
+import Banner from './components//Banner';
 
 library.add(fab);
 
@@ -19,6 +20,7 @@ function App() {
 			<Header />
 			<Sales />
 			<PopularItems />
+			<Banner />
 		</div>
 	);
 }
