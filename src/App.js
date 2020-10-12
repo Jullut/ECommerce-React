@@ -9,6 +9,7 @@ import PopularItems from './components//PopularItems';
 import Banner from './components//Banner';
 import FeaturedProducts from './components//FeaturedProducts';
 import Services from './components//Services';
+import Footer from './components//Footer';
 
 library.add(fab);
 
@@ -25,6 +26,7 @@ function App() {
 			<Banner />
 			<FeaturedProducts />
 			<Services />
+			<Footer />
 		</div>
 	);
 }
