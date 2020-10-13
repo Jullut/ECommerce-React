@@ -3,6 +3,7 @@ import styles from './Services.module.scss';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import cx from 'classnames';
 
 
 const Services = () => {
@@ -11,22 +12,22 @@ const Services = () => {
 <Container className={styles.bg}>
 
 <Row>
-    <Col>
+    <Col sm={11} md={4}>
     <img src='/img/services/focus.png' className={styles.img} />
     <h1 className={styles.mainText}>Focus</h1>
     <p className={styles.subText}>Our unwavering focus on superior service delivery and building next generation competencies</p>
     </Col>
 
-    <Col>
-    <img src='/img/services/method.png' className={styles.img} />
+    <Col sm={11} md={4} className={styles.row}>
+    <img src='/img/services/method.png' className={cx(styles.img, styles.right)} />
     <h1 className={styles.mainText}>Method</h1>
-    <p className={styles.subText}>A standardized methodology designed to deliver measurable business results and predictable costs</p>
+    <p className={styles.subText}>A standardized methodology designed to deliver measurable business results and predictable</p>
     </Col>
 
-    <Col>
+    <Col sm={11} md={4} className={styles.row}>
     <img src='/img/services/knowledge.png' className={styles.img} />
     <h1 className={styles.mainText}>Knowledge</h1>
-    <p className={styles.subText}>A highly skilled, proactive workforce that reliably improves each client’s ROI while mitigating their business risk</p>
+    <p className={styles.subText}>A highly skilled, proactive workforce that reliably improves each client’s ROI while mitigating their business</p>
     </Col>
 </Row>
 

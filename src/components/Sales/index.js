@@ -13,7 +13,101 @@ const Sales = () => {
 		<div>
 			<Container>
 				<Row>
-					<Col xs={9}>
+					<Col xs={11} className={cx(styles.colSm, "d-xs-block d-sm-block d-md-none")}>
+					<Carousel prevIcon={null} nextIcon={null}>
+						<Carousel.Item>
+							<img className="d-block w-100" src="/img/sales/bg-sm.png" alt="First slide" />
+							<Carousel.Caption className={styles.caption}>
+								<h3 className={cx(styles.titleCarousel, styles.leftCarousel)}>
+									{' '}
+									Control and manage any device with cloud solutions
+								</h3>
+								<p className={cx(styles.subTitleCarousel, styles.leftCarousel)}>
+								Improve business performance and the user experience with the right mix of IoT technology and processes
+								doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
+								vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed
+								</p>
+								<button className={cx(styles.btnCarousel, styles.middleBtnCarousel)}>
+									View more
+								</button>
+							</Carousel.Caption>
+						</Carousel.Item>
+
+						<Carousel.Item>
+							<img className="d-block w-100" src="/img/sales/bg-sm.png" alt="First slide" />
+							<Carousel.Caption className={styles.caption}>
+								<h3 className={cx(styles.titleCarousel, styles.leftCarousel)}>
+									{' '}
+									Control and manage any device with cloud solutions
+								</h3>
+								<p className={cx(styles.subTitleCarousel, styles.leftCarousel)}>
+								Improve business performance and the user experience with the right mix of IoT technology and processes
+								doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
+								vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed
+								</p>
+								<button className={cx(styles.btnCarousel, styles.middleBtnCarousel)}>
+									View more
+								</button>
+							</Carousel.Caption>
+						</Carousel.Item>
+
+						<Carousel.Item>
+							<img className="d-block w-100" src="/img/sales/bg-sm.png" alt="First slide" />
+							<Carousel.Caption className={styles.caption}>
+								<h3 className={cx(styles.titleCarousel, styles.leftCarousel)}>
+									{' '}
+									Control and manage any device with cloud solutions
+								</h3>
+								<p className={cx(styles.subTitleCarousel, styles.leftCarousel)}>
+								Improve business performance and the user experience with the right mix of IoT technology and processes
+								doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
+								vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed
+								</p>
+								<button className={cx(styles.btnCarousel, styles.middleBtnCarousel)}>
+									View more
+								</button>
+							</Carousel.Caption>
+						</Carousel.Item>
+
+						<Carousel.Item>
+							<img className="d-block w-100" src="/img/sales/bg-sm.png" alt="First slide" />
+							<Carousel.Caption className={styles.caption}>
+								<h3 className={cx(styles.titleCarousel, styles.leftCarousel)}>
+									{' '}
+									Control and manage any device with cloud solutions
+								</h3>
+								<p className={cx(styles.subTitleCarousel, styles.leftCarousel)}>
+								Improve business performance and the user experience with the right mix of IoT technology and processes
+								doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
+								vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed
+								</p>
+								<button className={cx(styles.btnCarousel, styles.middleBtnCarousel)}>
+									View more
+								</button>
+							</Carousel.Caption>
+						</Carousel.Item>
+
+						<Carousel.Item>
+							<img className="d-block w-100" src="/img/sales/bg-sm.png" alt="First slide" />
+							<Carousel.Caption className={styles.caption}>
+								<h3 className={cx(styles.titleCarousel, styles.leftCarousel)}>
+									{' '}
+									Control and manage any device with cloud solutions
+								</h3>
+								<p className={cx(styles.subTitleCarousel, styles.leftCarousel)}>
+								Improve business performance and the user experience with the right mix of IoT technology and processes
+								doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
+								vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed
+								</p>
+								<button className={cx(styles.btnCarousel, styles.middleBtnCarousel)}>
+									View more
+								</button>
+							</Carousel.Caption>
+						</Carousel.Item>
+					</Carousel>
+					</Col>
+
+					<Col lg={9} className={cx(styles.colBg, "d-none d-md-block")}>
 						<Carousel prevIcon={null} nextIcon={null}>
 							<Carousel.Item>
 								<img className="d-block w-100" src="/img/sales/sales-bg.png" alt="First slide" />
@@ -31,6 +125,7 @@ const Sales = () => {
 									</button>
 								</Carousel.Caption>
 							</Carousel.Item>
+
 							<Carousel.Item>
 								<img
 									className={cx(styles.imgBg, 'd-block w-100')}
@@ -51,6 +146,7 @@ const Sales = () => {
 									</button>
 								</Carousel.Caption>
 							</Carousel.Item>
+
 							<Carousel.Item>
 								<img
 									className={cx(styles.imgBg, 'd-block w-100')}
@@ -71,6 +167,7 @@ const Sales = () => {
 									</button>
 								</Carousel.Caption>
 							</Carousel.Item>
+
 							<Carousel.Item>
 								<img className="d-block w-100" src="/img/sales/sales-bg.png" alt="Fourth slide" />
 								<Carousel.Caption>
@@ -87,6 +184,7 @@ const Sales = () => {
 									</button>
 								</Carousel.Caption>
 							</Carousel.Item>
+							
 							<Carousel.Item>
 								<img
 									className={cx(styles.imgBg, 'd-block w-100')}
@@ -110,7 +208,7 @@ const Sales = () => {
 						</Carousel>
 					</Col>
 
-					<Col>
+					<Col className={styles.secondCol}>
 						<Card>
 							<Card.Img variant="top" src="/img/sales/summer-sales.png" className={styles.imgSales} />
 							<Card.Body>

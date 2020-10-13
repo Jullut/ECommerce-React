@@ -20,6 +20,14 @@
 	letter-spacing: normal;
 	line-height: 18px;
 	text-align: left;
+
+	a {
+		color: #45413e;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
 }
 
 .contactTitle {

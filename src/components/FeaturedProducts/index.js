@@ -33,7 +33,7 @@ export default class FeaturedProducts extends Component {
 		};
 
 	return (
-		<div>
+		<div className={styles.products}>
 			<Container className={styles.bg}>
 				<Row>
 					<Col>

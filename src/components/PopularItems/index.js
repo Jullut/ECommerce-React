@@ -8,6 +8,8 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import CardColumns from 'react-bootstrap/CardColumns';
 import CustomCard from '../CustomCard';
+import Carousel from 'react-bootstrap/Carousel';
+import cx from 'classnames';
 
 const cards = [
 	{
@@ -54,7 +56,47 @@ const PopularItems = () => {
 						<div className={styles.border} />
 					</Col>
 				</Row>
-				<Row className={styles.firstRow}>
+
+				<Row className={cx("d-xs-block d-sm-block d-md-none", styles.rowSm)}>
+					<Carousel prevIcon={null} nextIcon={null} className={styles.carousel}>
+						<Carousel.Item>
+							<CustomCard 
+							 cardImg="/img/popularItems/item2.png"
+							 title='Kristina Dam Oak Table With White Marble Top'
+							 price='$ 799.55' />
+						</Carousel.Item>
+
+						<Carousel.Item>
+							<CustomCard 
+							 cardImg="/img/popularItems/item3.png"
+							 title='Activate Facial Mask and Charcoal Soap'
+							 price='$ 129.55' />
+						</Carousel.Item>
+
+						<Carousel.Item>
+							<CustomCard 
+							 cardImg="/img/popularItems/item4.png"
+							 title='Cocktail Table Walnut | YES'
+							 price='$ 299.99' />
+						</Carousel.Item>
+
+						<Carousel.Item>
+							<CustomCard 
+							 cardImg="/img/popularItems/item5.png"
+							 title='Hay - About A Lounge Chair AAL 93'
+							 price='$ 659.55' />
+						</Carousel.Item>
+
+						<Carousel.Item>
+							<CustomCard 
+							 cardImg="/img/popularItems/item6.png"
+							 title='TORY DESK CALENDAR'
+							 price='$ 410.99' />
+						</Carousel.Item>
+					</Carousel>
+				</Row>
+
+				<Row className={cx("d-none d-md-block" , styles.firstRow)}>
 					<Col>
 						<CardColumns>
 							<Card>
@@ -93,7 +135,7 @@ const PopularItems = () => {
 						</CardColumns>
 					</Col>
 				</Row>
-				<Row>
+				<Row className="d-none d-md-block">
 					<Col>
 						<button className={styles.btn}>
 							load more <FontAwesomeIcon icon={faUndoAlt} className={styles.undo} />

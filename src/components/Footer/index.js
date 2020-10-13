@@ -16,8 +16,8 @@ const Footer = () => {
                 <p>© Copyright 2019. <br /> All Rights Reserved.</p>
                 <h2 className={styles.contactTitle}>contact</h2>
                 <p>Headquarters: <br /> 5600, Blvd. des Galeries, Bur 530 <br /> Québec, Québec G2K 2H6 </p>
-                <p>contact@osf-global.com</p>
-                <p>+1 (888) 548-4344</p>
+                <p><a href="mailto:contact@osf-global.com">contact@osf-global.com</a></p>
+                <p><a href="tel:18885484344">+1 (888) 548-4344</a></p>
             </Col>
 
             <Col xs={6}>

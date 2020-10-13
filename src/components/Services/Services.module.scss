@@ -52,3 +52,28 @@
 	padding-right: 20px;
 	padding-top: 10px;
 }
+
+
+@media (min-width: 320px) and (max-width: 767px) {
+
+	.bg {
+		padding: 50px 20px 50px 20px;
+	}
+
+	.right {
+		float: right;
+	}
+
+	.subText {
+		width: 100%;
+	}
+
+	.img {
+		margin: 0 40px 30px 40px;
+	}
+
+	.row {
+		margin-top: 10%;
+	}
+
+}

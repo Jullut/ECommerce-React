@@ -135,3 +135,37 @@
 	height: 19rem;
 	width: 17rem;
 }
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  
+	.secondCol {
+		display: none;
+	}
+
+	.colBg {
+		margin-bottom: 5%;
+	}
+
+  }
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+	.titleCarousel {
+		width: 100%;
+		font-size: 28px;
+	}
+
+	.subTitleCarousel {
+		width: 100%;
+	}
+
+	.caption {
+		padding-top: 0;
+	}
+
+	.colSm {
+		margin-bottom: 5%;
+		margin-left: 4%;
+	}
+
+}

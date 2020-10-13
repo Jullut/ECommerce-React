@@ -117,3 +117,11 @@
 	left: 77%;
 	bottom: 1px;
 }
+
+@media (min-width: 320px) and (max-width: 767px) {
+
+	.products {
+		display: none;
+	}
+
+}

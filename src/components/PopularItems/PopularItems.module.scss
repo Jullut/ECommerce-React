@@ -145,3 +145,26 @@
 	border-left: 2px solid #868380;
 	padding-left: 18px;
 }
+
+
+@media (min-width: 320px) and (max-width: 767px) {
+  
+	.mainTitle {
+	
+		&:before,
+		&:after {
+			width: 20%;
+		}
+	
+	}
+
+	.bg {
+		padding-bottom: 15%;
+	}
+	
+	.carousel ol {
+		position: relative;
+		top: 103%;
+	}
+
+  }
