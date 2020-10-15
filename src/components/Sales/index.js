@@ -11,7 +11,7 @@ import Card from 'react-bootstrap/Card';
 const Sales = () => {
 	return (
 		<div>
-			<Container>
+			<Container className={styles.container}>
 				<Row>
 					{/* MOBILE */}
 

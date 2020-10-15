@@ -22,6 +22,7 @@
 	color: #45413e;
 	font-size: 14px;
 	font-weight: 600;
+	border-bottom: none;
 }
 
 .navText {
@@ -34,13 +35,22 @@
 }
 
 .navImg {
-	height: 20em;
-	width: 20em;
+	padding-top: 10%;
 }
 
 .navContainer {
 	position: static;
-	min-width: 100vw;
+	min-width: 58vw;
 	background-color: #262a32;
-	padding: 2% 15%;
+}
+
+.container {
+	border-bottom: 2px solid #F3F0EA;
+	margin-bottom: 25px;
+}
+
+.row {
+	padding: 4% 0 4% 5%;
+	background-color: #262a32;
+
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Header.module.scss';
 import cx from 'classnames';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faSearch, faHeart, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 import Navbar from 'react-bootstrap/Navbar';
@@ -13,11 +14,13 @@ import Col from 'react-bootstrap/Col';
 const Header = () => {
 	return (
 		<header>
-			<Navbar collapseOnSelect expand="lg">
-				<Container>
+			<Container className={styles.container}>
+				<Navbar collapseOnSelect expand="lg">
 					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 					<Navbar.Brand href="#">
-						<img src="/img/header/logo.png" className="d-inline-block align-top mr-2" alt="OSF logo" />
+						<Link to="/">
+							<img src="/img/header/logo.png" className="d-inline-block align-top mr-2" alt="OSF logo" />
+						</Link>
 						<div className="d-md-inline-block align-middle d-none">
 							<span className={cx(styles.logoText, 'd-block pb-2')}>OSF</span>
 							<span className={cx(styles.logoTextSub, 'd-block pt-2')}>Academy</span>
@@ -28,8 +31,8 @@ const Header = () => {
 						<Nav className={cx(styles.nav, 'ml-auto align-middle')} variant="tabs">
 							<NavDropdown className="position-static" title="SERVICES" id="collasible-nav-dropdown">
 								<div className={styles.navContainer}>
-									<Row>
-										<Col xs={7}>
+									<Row className={styles.row}>
+										<Col xs={6}>
 											<Row>
 												<Col>
 													<NavDropdown.Header>PRODUCT CATEGORIES</NavDropdown.Header>
@@ -38,7 +41,9 @@ const Header = () => {
 
 											<Row>
 												<Col>
-													<NavDropdown.Item href="#">Accessories</NavDropdown.Item>
+													<NavDropdown.Item>
+														<Link to="/error">Accessories</Link>
+													</NavDropdown.Item>
 													<NavDropdown.Item href="#">Alcohol</NavDropdown.Item>
 													<NavDropdown.Item href="#">Art</NavDropdown.Item>
 													<NavDropdown.Item href="#">Books</NavDropdown.Item>
@@ -72,7 +77,7 @@ const Header = () => {
 											</Row>
 										</Col>
 
-										<Col>
+										<Col xs={2}>
 											<Row>
 												<Col>
 													<NavDropdown.Header>SALE</NavDropdown.Header>
@@ -93,7 +98,7 @@ const Header = () => {
 											</Row>
 										</Col>
 
-										<Col>
+										<Col xs={3}>
 											<img
 												src="/img/header/nav_img.png"
 												rounded
@@ -150,8 +155,8 @@ const Header = () => {
 							</Nav.Item>
 						</Nav>
 					</Navbar.Collapse>
-				</Container>
-			</Navbar>
+				</Navbar>
+			</Container>
 		</header>
 	);
 };
