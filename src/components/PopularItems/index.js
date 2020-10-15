@@ -57,46 +57,51 @@ const PopularItems = () => {
 					</Col>
 				</Row>
 
-				<Row className={cx("d-xs-block d-sm-block d-md-none", styles.rowSm)}>
+				<Row className="d-xs-block d-sm-block d-md-none">
 					<Carousel prevIcon={null} nextIcon={null} className={styles.carousel}>
 						<Carousel.Item>
-							<CustomCard 
-							 cardImg="/img/popularItems/item2.png"
-							 title='Kristina Dam Oak Table With White Marble Top'
-							 price='$ 799.55' />
+							<CustomCard
+								cardImg="/img/popularItems/item2.png"
+								title="Kristina Dam Oak Table With White Marble Top"
+								price="$ 799.55"
+							/>
 						</Carousel.Item>
 
 						<Carousel.Item>
-							<CustomCard 
-							 cardImg="/img/popularItems/item3.png"
-							 title='Activate Facial Mask and Charcoal Soap'
-							 price='$ 129.55' />
+							<CustomCard
+								cardImg="/img/popularItems/item3.png"
+								title="Activate Facial Mask and Charcoal Soap"
+								price="$ 129.55"
+							/>
 						</Carousel.Item>
 
 						<Carousel.Item>
-							<CustomCard 
-							 cardImg="/img/popularItems/item4.png"
-							 title='Cocktail Table Walnut | YES'
-							 price='$ 299.99' />
+							<CustomCard
+								cardImg="/img/popularItems/item4.png"
+								title="Cocktail Table Walnut | YES"
+								price="$ 299.99"
+							/>
 						</Carousel.Item>
 
 						<Carousel.Item>
-							<CustomCard 
-							 cardImg="/img/popularItems/item5.png"
-							 title='Hay - About A Lounge Chair AAL 93'
-							 price='$ 659.55' />
+							<CustomCard
+								cardImg="/img/popularItems/item5.png"
+								title="Hay - About A Lounge Chair AAL 93"
+								price="$ 659.55"
+							/>
 						</Carousel.Item>
 
 						<Carousel.Item>
-							<CustomCard 
-							 cardImg="/img/popularItems/item6.png"
-							 title='TORY DESK CALENDAR'
-							 price='$ 410.99' />
+							<CustomCard
+								cardImg="/img/popularItems/item6.png"
+								title="TORY DESK CALENDAR"
+								price="$ 410.99"
+							/>
 						</Carousel.Item>
 					</Carousel>
 				</Row>
 
-				<Row className={cx("d-none d-md-block" , styles.firstRow)}>
+				<Row className={cx('d-none d-md-block', styles.firstRow)}>
 					<Col>
 						<CardColumns>
 							<Card>
