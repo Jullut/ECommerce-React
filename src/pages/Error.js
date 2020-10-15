@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import '../App.scss';
 import '../assets/globalStyles/style.scss';
-import notFound from '../components//notFound';
+import NotFound from '../components/NotFound/index.js';
 
 export const Error = () => {
 	useEffect(() => {
@@ -10,7 +10,7 @@ export const Error = () => {
 
 	return (
 		<div className="App">
-			<notFound />
+			<NotFound />
 		</div>
 	);
 };
