@@ -10,6 +10,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import RegistrationForm from '../RegistrationForm/';
 
 const Header = () => {
 	return (
@@ -140,7 +141,7 @@ const Header = () => {
 							</Nav.Item>
 							<Nav.Item>
 								<Nav.Link className={cx(styles.navIcons, 'd-none d-md-block')} href="#">
-									<FontAwesomeIcon icon={faUser} />
+									<RegistrationForm />
 								</Nav.Link>
 							</Nav.Item>
 							<Nav.Item>
