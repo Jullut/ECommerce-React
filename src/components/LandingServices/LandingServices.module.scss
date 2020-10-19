@@ -1,0 +1,140 @@
+@font-face {
+	font-family: 'Lato - Bold';
+	src: url('../../assets/fonts/lato/Lato-Bold.ttf');
+	src: local('Lato Bold'), local('Lato-Bold'), url('../../assets/fonts/lato/Lato-Bold.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Lato';
+	src: url('../../assets/fonts/lato/Lato-Regular.ttf');
+	src: local('Lato Regular'), local('Lato-Regular'),
+		url('../../assets/fonts/lato/Lato-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+.container {
+    background-color: #f2edea;
+    padding: 3%;
+    padding-top: 1%;
+}
+
+.breadcrumb {
+
+    ol {
+        background-color: transparent;
+        justify-content: center;
+
+        li {
+            height: 12px;
+            color: #45413e;
+            font-family: 'Lato';
+            font-size: 15px;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: normal;
+            text-align: center;
+        
+                a {
+                    color: #85c441;
+                }
+        }
+    }
+}
+
+.mainTitle {
+    color: #45413e;
+    font-family: "Lato - Bold";
+    font-size: 48px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: normal;
+    text-align: center;
+    padding-bottom: 2%;
+    position: relative;
+	overflow: hidden;
+    margin: 0 auto;
+    width: 100%;
+
+	&:before,
+	&:after {
+		content: "";
+		display: inline-block;
+		width: 80%;
+		margin: 0 .5em 0 -55%;
+		vertical-align: middle;
+        border-bottom: 2px solid;
+        color: #ffffff;;
+	}
+	&:after {
+		margin: 0 -55% 0 .5em;
+	}
+}
+
+.col {
+    padding-right: 30%;
+}
+
+.row {
+    padding-left: 1%;
+}
+
+.smRow {
+    padding-top: 5%;
+    padding-bottom: 10%;
+}
+
+.bg {
+    padding-top: 4%;
+    background-color: #ffffff;
+    margin-bottom: 60px;
+    border-radius: 10px;
+}
+
+.dropTitle {
+    color: #45413e;
+    font-family: 'Lato';
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 24px;
+    text-align: left;
+}
+
+.dropdown {
+    
+    button {
+    background-color: transparent;
+    border: 2px solid #e8e2d6;
+    border-radius: 42px;
+    color: #45413e;
+    font-family: 'Lato';
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: normal;
+    text-align: left;
+    width: 150%;
+
+    &:hover, &:focus, &:active {
+        background-color: transparent !important;
+        border: 2px solid #e8e2d6 !important;
+        color: #45413e !important;
+        box-shadow: none !important;
+    }
+}
+}
+
+@media (min-width: 481px) {
+    .cardColumns {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
+    }
+}

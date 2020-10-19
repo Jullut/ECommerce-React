@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Carousel from 'react-bootstrap/Carousel';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 const Sales = () => {
 	return (
@@ -31,9 +32,11 @@ const Sales = () => {
 										explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
 										fugit, sed
 									</p>
-									<button className={cx(styles.btnCarousel, styles.middleBtnCarousel)}>
-										View more
-									</button>
+									<Link to="/categories">
+										<button className={cx(styles.btnCarousel, styles.middleBtnCarousel)}>
+											View more
+										</button>
+									</Link>
 								</Carousel.Caption>
 							</Carousel.Item>
 
@@ -51,9 +54,11 @@ const Sales = () => {
 										explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
 										fugit, sed
 									</p>
-									<button className={cx(styles.btnCarousel, styles.middleBtnCarousel)}>
-										View more
-									</button>
+									<Link to="/categories">
+										<button className={cx(styles.btnCarousel, styles.middleBtnCarousel)}>
+											View more
+										</button>
+									</Link>
 								</Carousel.Caption>
 							</Carousel.Item>
 
@@ -71,9 +76,11 @@ const Sales = () => {
 										explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
 										fugit, sed
 									</p>
-									<button className={cx(styles.btnCarousel, styles.middleBtnCarousel)}>
-										View more
-									</button>
+									<Link to="/categories">
+										<button className={cx(styles.btnCarousel, styles.middleBtnCarousel)}>
+											View more
+										</button>
+									</Link>
 								</Carousel.Caption>
 							</Carousel.Item>
 
@@ -91,9 +98,11 @@ const Sales = () => {
 										explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
 										fugit, sed
 									</p>
-									<button className={cx(styles.btnCarousel, styles.middleBtnCarousel)}>
-										View more
-									</button>
+									<Link to="/categories">
+										<button className={cx(styles.btnCarousel, styles.middleBtnCarousel)}>
+											View more
+										</button>
+									</Link>
 								</Carousel.Caption>
 							</Carousel.Item>
 
@@ -111,9 +120,11 @@ const Sales = () => {
 										explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
 										fugit, sed
 									</p>
-									<button className={cx(styles.btnCarousel, styles.middleBtnCarousel)}>
-										View more
-									</button>
+									<Link to="/categories">
+										<button className={cx(styles.btnCarousel, styles.middleBtnCarousel)}>
+											View more
+										</button>
+									</Link>
 								</Carousel.Caption>
 							</Carousel.Item>
 						</Carousel>
@@ -134,9 +145,11 @@ const Sales = () => {
 										Improve business performance and the user experience with the right mix of IoT
 										technology and processes
 									</p>
-									<button className={cx(styles.btnCarousel, styles.leftBtnCarousel)}>
-										View more
-									</button>
+									<Link to="/categories">
+										<button className={cx(styles.btnCarousel, styles.leftBtnCarousel)}>
+											View more
+										</button>
+									</Link>
 								</Carousel.Caption>
 							</Carousel.Item>
 
@@ -155,9 +168,11 @@ const Sales = () => {
 										Improve business performance and the user experience with the right mix of IoT
 										technology and processes
 									</p>
-									<button className={cx(styles.btnCarousel, styles.middleBtnCarousel)}>
-										View more
-									</button>
+									<Link to="/categories">
+										<button className={cx(styles.btnCarousel, styles.middleBtnCarousel)}>
+											View more
+										</button>
+									</Link>
 								</Carousel.Caption>
 							</Carousel.Item>
 
@@ -176,9 +191,11 @@ const Sales = () => {
 										Improve business performance and the user experience with the right mix of IoT
 										technology and processes
 									</p>
-									<button className={cx(styles.btnCarousel, styles.rightBtnCarousel)}>
-										View more
-									</button>
+									<Link to="/categories">
+										<button className={cx(styles.btnCarousel, styles.rightBtnCarousel)}>
+											View more
+										</button>
+									</Link>
 								</Carousel.Caption>
 							</Carousel.Item>
 
@@ -193,9 +210,11 @@ const Sales = () => {
 										Improve business performance and the user experience with the right mix of IoT
 										technology and processes
 									</p>
-									<button className={cx(styles.btnCarousel, styles.leftBtnCarousel)}>
-										View more
-									</button>
+									<Link to="/categories">
+										<button className={cx(styles.btnCarousel, styles.leftBtnCarousel)}>
+											View more
+										</button>
+									</Link>
 								</Carousel.Caption>
 							</Carousel.Item>
 
@@ -214,9 +233,11 @@ const Sales = () => {
 										Improve business performance and the user experience with the right mix of IoT
 										technology and processes
 									</p>
-									<button className={cx(styles.btnCarousel, styles.middleBtnCarousel)}>
-										View more
-									</button>
+									<Link to="/categories">
+										<button className={cx(styles.btnCarousel, styles.middleBtnCarousel)}>
+											View more
+										</button>
+									</Link>
 								</Carousel.Caption>
 							</Carousel.Item>
 						</Carousel>

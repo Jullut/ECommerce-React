@@ -66,6 +66,15 @@
 	&:hover {
 		background-color: #ffffff;
 		color: #45413e;
+
+		a {
+			color: #45413e;
+		}
+	}
+
+	a {
+		color: #ffffff;
+		text-decoration: none;
 	}
 }
 
