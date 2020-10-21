@@ -1,0 +1,162 @@
+@font-face {
+	font-family: 'Lato - Bold';
+	src: url('../../assets/fonts/lato/Lato-Bold.ttf');
+	src: local('Lato Bold'), local('Lato-Bold'), url('../../assets/fonts/lato/Lato-Bold.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Lato';
+	src: url('../../assets/fonts/lato/Lato-Regular.ttf');
+	src: local('Lato Regular'), local('Lato-Regular'),
+		url('../../assets/fonts/lato/Lato-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+.row {
+    margin-right: 0;
+}
+
+.smRow {
+    padding-top: 5%;
+    padding-bottom: 10%;
+    margin-right: 0;
+}
+
+.bg {
+    padding-top: 4%;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    padding-right: 7%;
+}
+
+.dropTitle {
+    color: #45413e;
+    font-family: 'Lato';
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 24px;
+    text-align: left;
+    margin-left: 50%;
+}
+
+.dropdown {
+    
+    button {
+    background-color: transparent;
+    border: 2px solid #A2A09E;
+    border-radius: 42px;
+    color: #45413e;
+    font-family: 'Lato';
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: normal;
+    text-align: left;
+
+        &:hover, &:focus, &:active {
+            background-color: transparent !important;
+            border: 2px solid #A2A09E !important;
+            color: #45413e !important;
+            box-shadow: none !important;
+        }
+    }
+
+    .btnDrop {
+        width: 8vw;
+        border-right: none;
+            &:hover, &:focus, &:active {
+                border-right: none !important;
+            }
+    }
+
+    .toggle {
+        border-left: none;
+            &:hover, &:focus, &:active {
+                border-left: none !important;
+            }
+    }
+
+}
+
+.btnAll {
+    width: 9.3vw;
+
+    button {
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+        border: none;
+
+            &:last-child {
+                margin-right: 0;
+            }
+    }
+
+    .btnWhite {
+        background-color: white;
+        border: 3px solid #45413e;
+        padding-top: 11px;
+        position: relative;
+        bottom: 2px;
+    }
+
+    .btnLightBlue {
+        background-color: #43C0CF;
+    }
+
+    .btnBlack {
+        background-color: #3D402F;
+    }
+
+    .btnGreen {
+        background-color: #4AAF00;
+    }
+
+    .btnBlue {
+        background-color: #315BBD;
+    }
+
+    .btnOrange {
+        background-color: #EC6115;
+    }
+
+    .btnRed {
+        background-color: #DC041D;
+    }
+
+    .btnBeige {
+        background-color: #EFEAD7;
+    }
+    
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+
+    .dropdown {
+        .btnDrop {
+            width: 50vw;
+        }
+    }
+
+    .smRow {
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    .btnAll {
+        width: 58vw;
+    }
+
+    .dropTitle {
+        margin-left: 25%;
+    }
+
+}
