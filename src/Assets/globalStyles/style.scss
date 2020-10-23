@@ -70,8 +70,24 @@
 	font-weight: 400;
 }
 
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+	background-color: #262A33;
+	color: #ffffff;
+	}
+
+.nav-tabs .nav-link {
+	border-bottom: none;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+.nav-link {
+	padding: 1rem 2rem;
+}
+
 @media (min-width: 576px) {
 	.card-columns {
 		column-count: 4;
 	}
 }
+

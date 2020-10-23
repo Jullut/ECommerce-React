@@ -1,0 +1,193 @@
+import React, { useState } from 'react';
+import styles from './RuffleCardigan.module.scss';
+import TabsList from '../TabsList';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
+import Dropdown from 'react-bootstrap/Dropdown';
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import InputGroup from 'react-bootstrap/InputGroup';
+import FormControl from 'react-bootstrap/FormControl';
+
+const RuffleCardigan = () => {
+	const [ curImg, setImg ] = useState('/img/cardigans/black.jpg');
+	const [ isExpanded, setExpanded ] = useState(false);
+	const [ count, setCount ] = useState(1);
+
+	let productDescription =
+		'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?';
+
+	return (
+		<div>
+			<Container className={styles.container}>
+				<Row>
+					<Col>
+						<Breadcrumb className={styles.breadcrumb}>
+							<Breadcrumb.Item>
+								<Link to="/">Home</Link>
+							</Breadcrumb.Item>
+							<Breadcrumb.Item>
+								<Link to="/categories">OSF Theme</Link>
+							</Breadcrumb.Item>
+							<Breadcrumb.Item active>Ruffle Front V-Neck Cardigan</Breadcrumb.Item>
+						</Breadcrumb>
+					</Col>
+				</Row>
+
+				<Row>
+					<Col>
+						<h1 className={styles.mainTitle}>Ruffle Front V-Neck Cardigan</h1>
+					</Col>
+				</Row>
+
+				<div className={styles.bg}>
+					<div className={styles.containerProduct}>
+						<Row>
+							<Col md={5}>
+								<img
+									src={curImg}
+									id="currentImg"
+									alt="Cardigan"
+									title="Cardigan"
+									className={styles.bigImg}
+								/>
+							</Col>
+							<Col md={3}>
+								<ul className={styles.colorpicker}>
+									<li>
+										<img
+											src="/img/cardigans/black_sm.jpg"
+											onClick={() => setImg('img/cardigans/black.jpg')}
+										/>
+									</li>
+									<li>
+										<img
+											src="/img/cardigans/black_back_sm.jpg"
+											onClick={() => setImg('img/cardigans/black_back.jpg')}
+										/>
+									</li>
+									<li>
+										<img
+											src="/img/cardigans/mint_sm.jpg"
+											onClick={() => setImg('/img/cardigans/mint.jpg')}
+										/>
+									</li>
+									<li>
+										<img
+											src="/img/cardigans/mint_back_sm.jpg"
+											onClick={() => setImg('/img/cardigans/mint_back.jpg')}
+										/>
+									</li>
+								</ul>
+							</Col>
+							<Col>
+								<Row>
+									<Col>
+										<p className={styles.price}>$299.99</p>
+									</Col>
+								</Row>
+
+								<Row>
+									<Dropdown className={styles.dropdown} as={ButtonGroup}>
+										<Button className={styles.btnDrop}>
+											<button className={styles.greyClr} />Dark Grey
+										</Button>
+										<Dropdown.Toggle split id="dropdown-basic" className={styles.toggle} />
+
+										<Dropdown.Menu>
+											<Dropdown.Item href="#">
+												<button className={styles.redClr} />Red
+											</Dropdown.Item>
+											<Dropdown.Item href="#">
+												<button className={styles.orangeClr} />Orange
+											</Dropdown.Item>
+											<Dropdown.Item href="#">
+												<button className={styles.mintClr} />Mint
+											</Dropdown.Item>
+										</Dropdown.Menu>
+									</Dropdown>
+								</Row>
+
+								<Row>
+									<Col>
+										<InputGroup className={styles.inputGroup}>
+											<InputGroup.Prepend>
+												<InputGroup.Text
+													className={styles.minus}
+													id="minus"
+													onClick={() => setCount(count - 1)}
+												>
+													-
+												</InputGroup.Text>
+											</InputGroup.Prepend>
+											<FormControl
+												className={styles.formControl}
+												placeholder={`   ${count}`}
+												aria-label="quantity"
+												aria-describedby="quantity"
+												value={`   ${count}`}
+												onChange={(e) => ({
+													count: e.target.value.replace(/\D/, '')
+												})}
+											/>
+											<InputGroup.Append>
+												<InputGroup.Text
+													className={styles.plus}
+													id="plus"
+													onClick={() => setCount(count + 1)}
+												>
+													+
+												</InputGroup.Text>
+											</InputGroup.Append>
+										</InputGroup>
+									</Col>
+									<Col>
+										<button className={styles.cartBtn}>Add to cart</button>
+									</Col>
+								</Row>
+
+								<Row>
+									<Col>
+										<p className={styles.description}>
+											{!isExpanded ? (
+												<div>{`${productDescription.substring(0, 100)}...`}</div>
+											) : (
+												<p>{productDescription}</p>
+											)}
+										</p>
+										<p className={styles.readMore} onClick={() => setExpanded(true)}>
+											Read more
+										</p>
+									</Col>
+								</Row>
+
+								<Row className={styles.icons}>
+									<span className={styles.share}>Share</span>
+									<a href="https://www.facebook.com/">
+										<FontAwesomeIcon icon={[ 'fab', 'facebook-f' ]} className={styles.icon} />
+									</a>
+									<a href="https://www.google.com.ua/">
+										<FontAwesomeIcon icon={[ 'fab', 'google-plus-g' ]} className={styles.icon} />
+									</a>
+									<a href="https://twitter.com/">
+										<FontAwesomeIcon icon={[ 'fab', 'twitter' ]} className={styles.icon} />
+									</a>
+									<a href="https://www.pinterest.com/">
+										<FontAwesomeIcon icon={[ 'fab', 'pinterest-p' ]} />
+									</a>
+								</Row>
+							</Col>
+						</Row>
+					</div>
+					<TabsList />
+				</div>
+			</Container>
+		</div>
+	);
+};
+
+export default RuffleCardigan;

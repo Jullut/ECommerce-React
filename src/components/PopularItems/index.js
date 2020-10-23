@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './PopularItems.module.scss';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUndoAlt } from '@fortawesome/free-solid-svg-icons';
 import Container from 'react-bootstrap/Container';
@@ -108,7 +109,7 @@ const PopularItems = () => {
 								<Card.Img className={styles.cardImg} variant="top" src="/img/popularItems/item2.png" />
 								<Card.Body>
 									<Card.Title className={styles.cardTitle}>
-										Hay - About A Lounge Chair AAL 93
+										<Link to="/cardigan">Hay - About A Lounge Chair AAL 93</Link>
 									</Card.Title>
 									<Card.Text>
 										<button className={styles.cardBtn}>
@@ -124,7 +125,11 @@ const PopularItems = () => {
 							))}
 
 							<Card className={styles.cardBody}>
-								<Card.Img className={styles.cardImg} variant="top" src="/img/popularItems/item8.png" />
+								<Card.Img
+									className={cx(styles.cardImg, styles.imgDragon)}
+									variant="top"
+									src="/img/popularItems/item8.png"
+								/>
 								<Card.ImgOverlay>
 									<div className={styles.imgContainer}>
 										<p className={styles.imgText}>
