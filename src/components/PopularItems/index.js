@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './PopularItems.module.scss';
+import myJson from '../cardInformation.json';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUndoAlt } from '@fortawesome/free-solid-svg-icons';
@@ -11,6 +12,11 @@ import CardColumns from 'react-bootstrap/CardColumns';
 import CustomCard from '../CustomCard';
 import Carousel from 'react-bootstrap/Carousel';
 import cx from 'classnames';
+import Items from '../Items';
+
+const items = [ ...myJson ];
+const itemsPerPage = 4;
+let arrayForHoldingItems = [];
 
 const cards = [
 	{
@@ -46,6 +52,20 @@ const cards = [
 ];
 
 const PopularItems = () => {
+	const [ itemsToShow, setItemsToShow ] = useState([]);
+	const [ next, setNext ] = useState(4);
+
+	const loopWithSlice = (start, end) => {
+		const slicedItems = items.slice(start, end);
+		arrayForHoldingItems = [ ...arrayForHoldingItems, ...slicedItems ];
+		setItemsToShow(arrayForHoldingItems);
+	};
+
+	const handleShowMoreItems = () => {
+		loopWithSlice(next, next + itemsPerPage);
+		setNext(next + itemsPerPage);
+	};
+
 	return (
 		<div>
 			<Container className={styles.bg}>
@@ -78,7 +98,7 @@ const PopularItems = () => {
 						<Carousel.Item>
 							<CustomCard
 								cardImg="/img/popularItems/item4.png"
-								title="Cocktail Table Walnut | YES"
+								title="Kristina Dam Oak Table With White Marble Top"
 								price="$ 299.99"
 							/>
 						</Carousel.Item>
@@ -94,7 +114,7 @@ const PopularItems = () => {
 						<Carousel.Item>
 							<CustomCard
 								cardImg="/img/popularItems/item6.png"
-								title="TORY DESK CALENDAR"
+								title="Activate Facial Mask and Charcoal Soap"
 								price="$ 410.99"
 							/>
 						</Carousel.Item>
@@ -146,7 +166,10 @@ const PopularItems = () => {
 				</Row>
 				<Row className="d-none d-md-block">
 					<Col>
-						<button className={styles.btn}>
+						<CardColumns>
+							<Items itemsToRender={itemsToShow} />
+						</CardColumns>
+						<button className={styles.btn} onClick={handleShowMoreItems}>
 							load more <FontAwesomeIcon icon={faUndoAlt} className={styles.undo} />
 						</button>
 					</Col>
