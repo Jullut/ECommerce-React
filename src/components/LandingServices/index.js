@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './LandingServices.module.scss';
+import myJson from '../cardInformation.json';
 import Filter from '../Filter';
 import CustomCard from '../CustomCard';
 import { Link } from 'react-router-dom';
@@ -10,114 +11,33 @@ import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import CardColumns from 'react-bootstrap/CardColumns';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
+import Items from '../Items';
 
-const cards = [
-	{
-		title: 'Kristina Dam Oak Table With White Marble Top',
-		price: '$ 799.55',
-		cardImg: '/img/popularItems/item3.png'
-	},
-	{
-		title: 'EAMES x Cast + Crew - Custom Powder Coated ',
-		price: '$ 799.55',
-		cardImg: '/img/popularItems/item1.png'
-	},
-	{
-		title: 'Activate Facial Mask and Charcoal Soap ',
-		price: '$ 129.55',
-		cardImg: '/img/popularItems/item12.png'
-	},
-	{
-		title: 'Vitra Cork Stool B, Cork - Design Within Reach',
-		price: '$ 299.99',
-		cardImg: '/img/popularItems/item9.png'
-	},
-	{
-		title: 'Hay - About A Lounge Chair AAL 93',
-		price: '$ 659.55',
-		cardImg: '/img/popularItems/item6.png'
-	},
-	{
-		title: 'TORY DESK CALENDAR',
-		price: '$ 410.99',
-		cardImg: '/img/popularItems/item5.png'
-	},
-	{
-		title: 'CH445 Wing Chair on SUITE NY',
-		price: '$ 330.55',
-		cardImg: '/img/popularItems/item10.png'
-	},
-	{
-		title: 'CH445 Wing Chair on SUITE NY',
-		price: '$ 330.55',
-		cardImg: '/img/popularItems/item10.png'
-	},
-	{
-		title: 'Kristina Dam Oak Table With White Marble Top',
-		price: '$ 2195.00',
-		cardImg: '/img/popularItems/item10.png'
-	},
-	{
-		title: 'MONOQI | Ø55 Crossit Table - Wht/Grn',
-		price: '$ 299.99',
-		cardImg: '/img/popularItems/item10.png'
-	},
-	{
-		title: 'Hay - About A Lounge Chair AAL 93',
-		price: '$ 659.55',
-		cardImg: '/img/popularItems/item6.png'
-	},
-	{
-		title: 'Vitra Cork Stool B, Cork - Design Within Reach',
-		price: '$ 870.95',
-		cardImg: '/img/popularItems/item6.png'
-	},
-	{
-		title: 'Hay - About A Lounge Chair AAL 93',
-		price: '$ 659.55',
-		cardImg: '/img/popularItems/item10.png'
-	},
-	{
-		title: 'TORY DESK CALENDAR',
-		price: '$ 410.99',
-		cardImg: '/img/popularItems/item7.png'
-	},
-	{
-		title: 'EAMES x Cast + Crew - Custom Powder Coated',
-		price: '$ 330.55',
-		cardImg: '/img/popularItems/item11.png'
-	},
-	{
-		title: 'CH445 Wing Chair on SUITE NY',
-		price: '$ 330.55',
-		cardImg: '/img/popularItems/item10.png'
-	}
-];
-
-const cardsSm = [
-	{
-		title: 'Kristina Dam Oak Table With White Marble Top',
-		price: '$ 799.55',
-		cardImg: '/img/popularItems/item3.png'
-	},
-	{
-		title: 'EAMES x Cast + Crew - Custom Powder Coated ',
-		price: '$ 799.55',
-		cardImg: '/img/popularItems/item1.png'
-	},
-	{
-		title: 'Activate Facial Mask and Charcoal Soap ',
-		price: '$ 129.55',
-		cardImg: '/img/popularItems/item10.png'
-	},
-	{
-		title: 'Vitra Cork Stool B, Cork - Design Within Reach',
-		price: '$ 299.99',
-		cardImg: '/img/popularItems/item10.png'
-	}
-];
+const items = [ ...myJson ];
+const itemsPerPage = 4;
+let arrayForHoldingItems = [];
 
 const LandingServices = () => {
+	const [ itemsToShow, setItemsToShow ] = useState([]);
+	const [ next, setNext ] = useState(4);
+
+	const loopWithSlice = (start, end) => {
+		const slicedItems = items.slice(start, end);
+		arrayForHoldingItems = [ ...arrayForHoldingItems, ...slicedItems ];
+		setItemsToShow(arrayForHoldingItems);
+	};
+
+	useEffect(() => {
+		loopWithSlice(0, 16);
+	}, []);
+
+	const handleShowMoreItems = () => {
+		loopWithSlice(next, next + itemsPerPage);
+		setNext(next + itemsPerPage);
+	};
+
+	const smItems = items.slice(0, 4);
+
 	return (
 		<div>
 			<Container className={styles.container}>
@@ -172,15 +92,13 @@ const LandingServices = () => {
 				<Row>
 					<Col className="d-none d-md-flex">
 						<CardColumns className={styles.cardColumns}>
-							{cards.map(({ title, price, cardImg }) => (
-								<CustomCard cardImg={cardImg} title={title} price={price} />
-							))}
+							<Items itemsToRender={itemsToShow} />
 						</CardColumns>
 					</Col>
 
 					<Col className="d-xs-flex d-sm-flex d-md-none">
 						<CardColumns className={styles.cardColumns}>
-							{cardsSm.map(({ title, price, cardImg }) => (
+							{smItems.map(({ title, price, cardImg }) => (
 								<CustomCard cardImg={cardImg} title={title} price={price} />
 							))}
 						</CardColumns>
@@ -189,7 +107,9 @@ const LandingServices = () => {
 
 				<Row>
 					<Col>
-						<button className={styles.btn}>load more</button>
+						<button className={styles.btn} onClick={handleShowMoreItems}>
+							load more
+						</button>
 					</Col>
 				</Row>
 			</Container>
