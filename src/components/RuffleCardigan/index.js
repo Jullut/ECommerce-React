@@ -3,6 +3,10 @@ import styles from './RuffleCardigan.module.scss';
 import TabsList from '../TabsList';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExpandArrowsAlt } from '@fortawesome/free-solid-svg-icons';
+import 'slick-carousel/slick/slick.scss';
+import 'slick-carousel/slick/slick-theme.scss';
+import Slider from 'react-slick';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -20,6 +24,15 @@ const RuffleCardigan = () => {
 
 	let productDescription =
 		'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?';
+
+	const settings = {
+		dots: true,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		arrows: false
+	};
 
 	return (
 		<div>
@@ -39,8 +52,11 @@ const RuffleCardigan = () => {
 				</Row>
 
 				<Row>
-					<Col>
+					<Col className="d-none d-md-block">
 						<h1 className={styles.mainTitle}>Ruffle Front V-Neck Cardigan</h1>
+					</Col>
+					<Col className="d-xs-block d-sm-block d-md-none">
+						<h1 className={styles.mainTitle}>V-Neck Cardigan</h1>
 					</Col>
 				</Row>
 
@@ -48,6 +64,8 @@ const RuffleCardigan = () => {
 					<div className={styles.containerProduct}>
 						<Row>
 							<Col md={5}>
+								<FontAwesomeIcon icon={faExpandArrowsAlt} className={styles.expandArrows} />
+
 								<img
 									src={curImg}
 									id="currentImg"
@@ -56,7 +74,7 @@ const RuffleCardigan = () => {
 									className={styles.bigImg}
 								/>
 							</Col>
-							<Col md={3}>
+							<Col md={3} className="d-none d-md-block">
 								<ul className={styles.colorpicker}>
 									<li>
 										<img
@@ -83,6 +101,34 @@ const RuffleCardigan = () => {
 										/>
 									</li>
 								</ul>
+							</Col>
+							<Col className="d-xs-block d-sm-block d-md-none">
+								<Slider {...settings} className={styles.colorpicker}>
+									<div>
+										<img
+											src="/img/cardigans/black_sm.jpg"
+											onClick={() => setImg('img/cardigans/black.jpg')}
+										/>
+									</div>
+									<div>
+										<img
+											src="/img/cardigans/black_back_sm.jpg"
+											onClick={() => setImg('img/cardigans/black_back.jpg')}
+										/>
+									</div>
+									<div>
+										<img
+											src="/img/cardigans/mint_sm.jpg"
+											onClick={() => setImg('/img/cardigans/mint.jpg')}
+										/>
+									</div>
+									<div>
+										<img
+											src="/img/cardigans/mint_back_sm.jpg"
+											onClick={() => setImg('/img/cardigans/mint_back.jpg')}
+										/>
+									</div>
+								</Slider>
 							</Col>
 							<Col>
 								<Row>
@@ -113,7 +159,7 @@ const RuffleCardigan = () => {
 								</Row>
 
 								<Row>
-									<Col>
+									<Col xs={12} md={6} className={styles.col}>
 										<InputGroup className={styles.inputGroup}>
 											<InputGroup.Prepend>
 												<InputGroup.Text
@@ -126,10 +172,10 @@ const RuffleCardigan = () => {
 											</InputGroup.Prepend>
 											<FormControl
 												className={styles.formControl}
-												placeholder={`   ${count}`}
+												placeholder={` ${count}`}
 												aria-label="quantity"
 												aria-describedby="quantity"
-												value={`   ${count}`}
+												value={` ${count}`}
 												onChange={(e) => ({
 													count: e.target.value.replace(/\D/, '')
 												})}
@@ -183,7 +229,9 @@ const RuffleCardigan = () => {
 							</Col>
 						</Row>
 					</div>
-					<TabsList />
+					<div className="d-none d-md-block">
+						<TabsList />
+					</div>
 				</div>
 			</Container>
 		</div>

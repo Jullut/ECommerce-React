@@ -54,7 +54,6 @@ const PopularItems = () => {
 						<h1 className={styles.mainTitle}>
 							<span>Popular Items</span>
 						</h1>
-						<div className={styles.border} />
 					</Col>
 				</Row>
 
