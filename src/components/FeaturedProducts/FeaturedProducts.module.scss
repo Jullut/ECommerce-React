@@ -103,7 +103,7 @@
 }
 
 .cardHeight {
-	min-height: 11vh;
+	min-height: 108px;
 }
 
 .cardDown {
@@ -129,3 +129,19 @@
 	}
 
 }
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  
+	.cardHeight {
+		min-height: 125px;
+	}
+	
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+  
+	.cardHeight {
+		min-height: 165px;
+	}
+	
+  }

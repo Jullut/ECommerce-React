@@ -77,3 +77,35 @@
 	}
 
 }
+
+@media (min-width: 320px) and (max-width: 424px) {
+  
+	.img {
+		margin-top: 40px;
+	}
+
+	.right {
+		margin-top: 25px;
+	}
+	
+  }
+
+  @media (min-width: 425px) and (max-width: 767px) {
+  
+	.img {
+		margin-top: 5px;
+	}
+	
+  }
+
+  @media (min-width: 700px) and (max-width: 1024px) and (orientation: landscape) {
+  
+	.img {
+		margin-top: 20px;
+	}
+
+	.bg {
+		padding: 50px 15px 50px 15px;
+	}
+	
+  }
