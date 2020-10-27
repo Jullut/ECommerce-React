@@ -84,8 +84,8 @@
 
         img {
             cursor: pointer;
-            width: 9vh;
-            height: 9vh;
+            width: 73px;
+            height: 70px;
         }
     }
 }
@@ -125,8 +125,8 @@
 }
 
 .bigImg {
-    height: 48vh;
-    width: 48vh;
+    width: 458px;
+    height: 406px;
 }
 
 .bg {
@@ -162,7 +162,7 @@
     }
 
     .btnDrop {
-        width: 8vw;
+        width: 152px;
         border-right: none;
             &:hover, &:focus, &:active {
                 border-right: none !important;
@@ -255,7 +255,7 @@
     background-color: transparent;
     border-right: none;
     border-left: none;
-    height: 2.6em;
+    height: 40px;
 }
 
 .plus {
@@ -286,7 +286,7 @@
     line-height: normal;
     text-align: left;
     text-transform: uppercase;
-    padding: 11px 30px;
+    padding: 10px 30px;
     margin-top: 25px;
     position: relative;
     right: 40%;
@@ -326,7 +326,7 @@
     left: 10%;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 480px) {
   
     .container {
         padding: 0 15px 0 15px;
@@ -368,11 +368,11 @@
 
             img {
                 cursor: pointer;
-                width: 11vh;
-                height: 11vh;
+                width: 72px;
+                height: 70px;
 
                 &:nth-child(1) {
-                    margin-left: 5px;
+                    margin-left: 20px;
                 }
     
             }
@@ -394,10 +394,8 @@
         }
     
         .btnDrop {
-            width: 40vw;
+            width: 153px;
         }
-    
-
     
         .greyClr {
             border-radius: 50%;
@@ -444,5 +442,94 @@
       
     }
     
+
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+  
+    .bigImg {
+        width: 368px;
+        height: 376px;
+    }    
+
+    .cartBtn {
+        padding: 10px 20px;
+        right: 20%;
+    }
+
+    .inputGroup {
+    margin: 25px 0 40px 0;
+    width: 82%;
+    }
+
+    .mainTitle {
+    
+            &:before,
+            &:after {
+                width: 10%;
+            }
+    }
+
+}
+
+
+@media (min-width: 700px) and (max-width: 768px) {
+  
+    .row {
+        display: flex;
+        flex-direction: column;
+        padding-left: 50px;
+    }
+
+    .colorpicker {
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
+        margin-left: 30px;
+
+        img {
+            padding-left: 5px;
+        }
+    }
+
+    .mainTitle {
+    
+        &:before,
+        &:after {
+            width: 2%;
+        }
+    }
+    
+  }
+  
+  @media (max-width: 375px) {
+
+    .colorpicker {
+    
+        div {
+
+            img:nth-child(1) {
+                    margin-left: 15px;
+                }
+
+        }
+
+    }
+
+  }
+
+  @media (max-width: 320px) {
+
+    .colorpicker {
+    
+        div {
+
+            img:nth-child(1) {
+                    margin-left: 5px;
+                }
+
+        }
+
+    }
 
   }

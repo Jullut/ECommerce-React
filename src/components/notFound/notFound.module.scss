@@ -19,12 +19,12 @@
     background-color: #ffffff;
     margin: 4%;
     border-radius: 12px;
-    height: 50vh;
+    height: 492px;
 }
 
 .container {
     background-color: #f1edea;
-    height: 75vh;
+    height: 746px;
 }
 
 .breadcrumb {
@@ -185,11 +185,11 @@
 @media (min-width: 320px) and (max-width: 767px) {
 
     .bg {
-        height: 90vh;
+        height: 530px;
     }
     
     .container {
-        height: 110vh;
+        height: 800px;
     }
 
     .subTitle {
@@ -207,4 +207,33 @@
         top:50%;
     }
 
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  
+    .img {
+        right: 10%;
+    }
+    
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+  
+    .inputGroupMain, .subTitle, .description, .link, .searchTitle  {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        left: 40%;
+        }
+
+    .img {
+        right: 20%;
+    }
+
+  }
+
+  @media (max-width: 320px) {
+    .bigTitle {
+        font-size: 93px; 
+    }
 }

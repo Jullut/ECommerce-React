@@ -52,7 +52,7 @@ const NotFound = () => {
 
 						<div>
 							<p className={styles.searchTitle}>Search our site</p>
-							<InputGroup className="mb-3">
+							<InputGroup className="mb-3" className={styles.inputGroupMain}>
 								<FormControl
 									placeholder="Search"
 									aria-label="Search"

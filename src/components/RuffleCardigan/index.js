@@ -62,8 +62,8 @@ const RuffleCardigan = () => {
 
 				<div className={styles.bg}>
 					<div className={styles.containerProduct}>
-						<Row>
-							<Col md={5}>
+						<Row className={styles.row}>
+							<Col xs={12} md={5}>
 								<FontAwesomeIcon icon={faExpandArrowsAlt} className={styles.expandArrows} />
 
 								<img

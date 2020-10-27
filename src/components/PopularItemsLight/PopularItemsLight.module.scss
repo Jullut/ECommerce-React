@@ -61,5 +61,10 @@
     .mainTitle {
         margin-bottom: 0;
 
+        &:before,
+        &:after {
+        width: 20%;
+    }
+
   }
 }
