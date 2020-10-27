@@ -5,6 +5,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import WishContextProvider from '../Contexts/WishContext';
 import CartContextProvider from '../Contexts/CartContext';
+import Cookie from '../Cookie';
 
 export const Layout = ({ children }) => {
 	return (
@@ -14,6 +15,7 @@ export const Layout = ({ children }) => {
 					<Header />
 					{children}
 					<Footer />
+					<Cookie />
 				</WishContextProvider>
 			</CartContextProvider>
 		</div>
