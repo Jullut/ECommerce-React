@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './PopularItems.module.scss';
 import myJson from '../cardInformation.json';
 import { Link } from 'react-router-dom';
@@ -17,39 +17,6 @@ import Items from '../Items';
 const items = [ ...myJson ];
 const itemsPerPage = 4;
 let arrayForHoldingItems = [];
-
-const cards = [
-	{
-		title: 'Kristina Dam Oak Table With White Marble Top',
-		price: '$ 799.55',
-		cardImg: '/img/popularItems/item1.png'
-	},
-	{
-		title: 'Activate Facial Mask and Charcoal Soap',
-		price: '$ 129.55',
-		cardImg: '/img/popularItems/item3.png'
-	},
-	{
-		title: 'Cocktail Table Walnut | YES',
-		price: '$ 299.99',
-		cardImg: '/img/popularItems/item4.png'
-	},
-	{
-		title: 'Hay - About A Lounge Chair AAL 93',
-		price: '$ 659.55',
-		cardImg: '/img/popularItems/item5.png'
-	},
-	{
-		title: 'TORY DESK CALENDAR',
-		price: '$ 410.99',
-		cardImg: '/img/popularItems/item6.png'
-	},
-	{
-		title: 'CH445 Wing Chair on SUITE NY',
-		price: '$ 330.55',
-		cardImg: '/img/popularItems/item7.png'
-	}
-];
 
 const PopularItems = () => {
 	const [ itemsToShow, setItemsToShow ] = useState([]);
@@ -139,9 +106,7 @@ const PopularItems = () => {
 								</Card.Body>
 							</Card>
 
-							{cards.map(({ title, price, cardImg }) => (
-								<CustomCard cardImg={cardImg} title={title} price={price} />
-							))}
+							<Items itemsToRender={items.slice(0, 6)} />
 
 							<Card className={styles.cardBody}>
 								<Card.Img

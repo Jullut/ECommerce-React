@@ -3,7 +3,7 @@ import styles from './Header.module.scss';
 import cx from 'classnames';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faSearch, faHeart, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faHeart, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -11,6 +11,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import RegistrationForm from '../RegistrationForm/';
+import WishList from '../WishList/';
 
 const Header = () => {
 	return (
@@ -146,7 +147,7 @@ const Header = () => {
 							</Nav.Item>
 							<Nav.Item>
 								<Nav.Link className={cx(styles.navIcons, 'd-none d-md-block')} href="#">
-									<FontAwesomeIcon icon={faHeart} />
+									<WishList />
 								</Nav.Link>
 							</Nav.Item>
 							<Nav.Item>

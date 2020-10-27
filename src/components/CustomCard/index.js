@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { WishContext } from '../Contexts/WishContext';
 import '../../assets/globalStyles/style.scss';
 import styles from './CustomCard.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,6 +7,8 @@ import { faHeart, faPlus } from '@fortawesome/free-solid-svg-icons';
 import Card from 'react-bootstrap/Card';
 
 const CustomCard = ({ cardImg, title, price }) => {
+	const { addWish } = useContext(WishContext);
+
 	return (
 		<Card className={styles.card}>
 			<Card.Img className={styles.cardImg} variant="top" src={cardImg} />
@@ -17,7 +20,7 @@ const CustomCard = ({ cardImg, title, price }) => {
 				<div className={styles.plus}>
 					<FontAwesomeIcon icon={faPlus} />
 				</div>
-				<div className={styles.heart}>
+				<div className={styles.heart} onClick={() => addWish()}>
 					<FontAwesomeIcon icon={faHeart} />
 				</div>
 			</div>

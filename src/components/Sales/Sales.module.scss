@@ -107,7 +107,8 @@
 }
 
 .imgBg {
-	height: 480px;
+	height: 505px;
+	width: 870px;
 }
 
 .titleSales {
@@ -178,8 +179,21 @@
 	}
 
 	.colSm {
-		margin-bottom: 5%;
-		margin-left: 4%;
+		margin: 0 auto;
+	}
+
+	.carouselItem {
+		height: 472px;
+		width: 290px;
 	}
 
 }
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  
+	.colBg {
+		margin: 0 auto;
+	}
+	
+  }
+

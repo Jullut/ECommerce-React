@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { WishContext } from '../Contexts/WishContext';
 import '../../assets/globalStyles/style.scss';
 import styles from './Items.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,6 +7,8 @@ import { faHeart, faPlus } from '@fortawesome/free-solid-svg-icons';
 import Card from 'react-bootstrap/Card';
 
 const Items = ({ itemsToRender }) => {
+	const { addWish } = useContext(WishContext);
+
 	return (
 		<div>
 			{itemsToRender.map(({ title, price, cardImg }) => (
@@ -19,7 +22,7 @@ const Items = ({ itemsToRender }) => {
 						<div className={styles.plus}>
 							<FontAwesomeIcon icon={faPlus} />
 						</div>
-						<div className={styles.heart}>
+						<div className={styles.heart} onClick={() => addWish()}>
 							<FontAwesomeIcon icon={faHeart} />
 						</div>
 					</div>

@@ -16,9 +16,9 @@ const Sales = () => {
 				<Row>
 					{/* MOBILE */}
 
-					<Col xs={11} className={cx(styles.colSm, 'd-xs-block d-sm-block d-md-none')}>
+					<Col xs={12} className={cx(styles.colSm, 'd-xs-block d-sm-block d-md-none')}>
 						<Carousel prevIcon={null} nextIcon={null}>
-							<Carousel.Item>
+							<Carousel.Item className={styles.carouselItem}>
 								<img className="d-block w-100" src="/img/sales/bg-sm.png" alt="First slide" />
 								<Carousel.Caption className={styles.caption}>
 									<h3 className={cx(styles.titleCarousel, styles.leftCarousel)}>
@@ -40,7 +40,7 @@ const Sales = () => {
 								</Carousel.Caption>
 							</Carousel.Item>
 
-							<Carousel.Item>
+							<Carousel.Item className={styles.carouselItem}>
 								<img className="d-block w-100" src="/img/sales/bg-sm.png" alt="First slide" />
 								<Carousel.Caption className={styles.caption}>
 									<h3 className={cx(styles.titleCarousel, styles.leftCarousel)}>
@@ -62,7 +62,7 @@ const Sales = () => {
 								</Carousel.Caption>
 							</Carousel.Item>
 
-							<Carousel.Item>
+							<Carousel.Item className={styles.carouselItem}>
 								<img className="d-block w-100" src="/img/sales/bg-sm.png" alt="First slide" />
 								<Carousel.Caption className={styles.caption}>
 									<h3 className={cx(styles.titleCarousel, styles.leftCarousel)}>
@@ -84,7 +84,7 @@ const Sales = () => {
 								</Carousel.Caption>
 							</Carousel.Item>
 
-							<Carousel.Item>
+							<Carousel.Item className={styles.carouselItem}>
 								<img className="d-block w-100" src="/img/sales/bg-sm.png" alt="First slide" />
 								<Carousel.Caption className={styles.caption}>
 									<h3 className={cx(styles.titleCarousel, styles.leftCarousel)}>
@@ -106,7 +106,7 @@ const Sales = () => {
 								</Carousel.Caption>
 							</Carousel.Item>
 
-							<Carousel.Item>
+							<Carousel.Item className={styles.carouselItem}>
 								<img className="d-block w-100" src="/img/sales/bg-sm.png" alt="First slide" />
 								<Carousel.Caption className={styles.caption}>
 									<h3 className={cx(styles.titleCarousel, styles.leftCarousel)}>
@@ -135,7 +135,11 @@ const Sales = () => {
 					<Col lg={9} className={cx(styles.colBg, 'd-none d-md-block')}>
 						<Carousel prevIcon={null} nextIcon={null}>
 							<Carousel.Item>
-								<img className="d-block w-100" src="/img/sales/sales-bg.png" alt="First slide" />
+								<img
+									className={cx(styles.imgBg, 'd-block w-100')}
+									src="/img/sales/sales-bg.png"
+									alt="First slide"
+								/>
 								<Carousel.Caption>
 									<h3 className={cx(styles.titleCarousel, styles.leftCarousel)}>
 										{' '}
@@ -200,7 +204,11 @@ const Sales = () => {
 							</Carousel.Item>
 
 							<Carousel.Item>
-								<img className="d-block w-100" src="/img/sales/sales-bg.png" alt="Fourth slide" />
+								<img
+									className={cx(styles.imgBg, 'd-block w-100')}
+									src="/img/sales/sales-bg.png"
+									alt="Fourth slide"
+								/>
 								<Carousel.Caption>
 									<h3 className={cx(styles.titleCarousel, styles.leftCarousel)}>
 										{' '}
