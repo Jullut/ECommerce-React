@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styles from './PopularItems.module.scss';
 import myJson from '../cardInformation.json';
 import { Link } from 'react-router-dom';
@@ -13,6 +13,7 @@ import CustomCard from '../CustomCard';
 import Carousel from 'react-bootstrap/Carousel';
 import cx from 'classnames';
 import Items from '../Items';
+import { CartContext } from '../Contexts/CartContext';
 
 const items = [ ...myJson ];
 const itemsPerPage = 4;
@@ -21,6 +22,7 @@ let arrayForHoldingItems = [];
 const PopularItems = () => {
 	const [ itemsToShow, setItemsToShow ] = useState([]);
 	const [ next, setNext ] = useState(4);
+	const { addItem } = useContext(CartContext);
 
 	const loopWithSlice = (start, end) => {
 		const slicedItems = items.slice(start, end);
@@ -98,7 +100,7 @@ const PopularItems = () => {
 										<Link to="/cardigan">Hay - About A Lounge Chair AAL 93</Link>
 									</Card.Title>
 									<Card.Text>
-										<button className={styles.cardBtn}>
+										<button className={styles.cardBtn} onClick={() => addItem()}>
 											<span className={styles.cardBtnPrice}>$659.55</span>
 											<span className={styles.cardBtnText}>Buy now</span>
 										</button>

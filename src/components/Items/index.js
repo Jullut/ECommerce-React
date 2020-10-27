@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { WishContext } from '../Contexts/WishContext';
+import { CartContext } from '../Contexts/CartContext';
 import '../../assets/globalStyles/style.scss';
 import styles from './Items.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,6 +9,7 @@ import Card from 'react-bootstrap/Card';
 
 const Items = ({ itemsToRender }) => {
 	const { addWish } = useContext(WishContext);
+	const { addItem } = useContext(CartContext);
 
 	return (
 		<div>
@@ -19,7 +21,7 @@ const Items = ({ itemsToRender }) => {
 						<Card.Text className={styles.cardPrice}>{price}</Card.Text>
 					</Card.Body>
 					<div className={styles.overlay}>
-						<div className={styles.plus}>
+						<div className={styles.plus} onClick={() => addItem()}>
 							<FontAwesomeIcon icon={faPlus} />
 						</div>
 						<div className={styles.heart} onClick={() => addWish()}>
