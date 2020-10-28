@@ -1,5 +1,13 @@
 @import 'https://fonts.googleapis.com/css2?family=Lato';
 
+@font-face {
+	font-family: 'Lato - Bold';
+	src: url('../../assets/fonts/lato/Lato-Bold.ttf');
+	src: local('Lato Bold'), local('Lato-Bold'), url('../../assets/fonts/lato/Lato-Bold.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
 .logoText {
 	width: 73px;
 	height: 25px;
@@ -25,6 +33,13 @@
 	border-bottom: none;
 }
 
+.navDropdown {
+	a{
+	border-top-left-radius: 0px !important;
+	border-top-right-radius: 0px !important;
+	}
+}
+
 .navText {
 	color: #45413e !important;
 }
@@ -40,7 +55,7 @@
 
 .navContainer {
 	position: static;
-	min-width: 58vw;
+	min-width: 1110px;
 	background-color: #262a32;
 }
 
@@ -51,5 +66,119 @@
 .row {
 	padding: 4% 0 4% 5%;
 	background-color: #262a32;
+
+}
+
+.col {
+	a  {
+		color: #ffffff;
+
+		&:hover {
+			color: #ffffff;
+		}
+	}
+}
+
+.dropdownItem {
+	&:hover {
+		background-color: transparent;
+	}
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  
+	.navContainer {
+		min-width: 930px;
+	}
+	
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+  
+	.brand {
+		margin: 0 auto;
+		padding-right: 70px;
+	}
+	
+  }
+
+  @media (min-width: 320px) and (max-width: 480px) {
+  
+	.brand {
+		margin: 0 auto;
+		padding-right: 60px;
+	}
+	
+  }
+
+  @media (min-width: 320px) and (max-width: 768px) {
+	.cardHeader {
+	background-color: white;
+	height: 35px;
+	border: none;
+	display: flex;
+	flex-direction: row;
+	color: #ffffff;
+	font-family: "Lato - Bold";
+	font-size: 14px;
+	font-weight: 400;
+	text-align: left;
+	background-color: #262a32;
+
+	  .navTitle {
+		  width: 320px;
+	  }
+
+	  .dropSubTitle {
+		width: 150px;
+	  }
+	}
+
+	.navTitleUp {
+		text-transform: uppercase;
+	}
+
+	.contactText {
+	text-align: center;
+	}
+
+  .cardBody {
+	  text-align: left;
+	  padding-top: 10px;
+	  padding-bottom: 10px;
+	  background-color: #262a32;
+	  color: #ffffff;
+
+	   a{
+		  color: #ffffff;
+		  padding-left: 15px;
+	   }
+  }
+
+  .icons {
+	  font-size: 20px;
+  }
+
+  .navbarSm, .container {
+	  padding: 0;
+  }
+
+  .navbarSm {
+	  button {
+	 margin-left: 15px; 
+	  }
+}
+
+.nav {
+	background-color: #262a32;
+}
+
+.img {
+	width: 271px;
+	height: 276px;
+	margin: 0 auto;
+	margin-top: 100px;
+	margin-bottom: 20px;
+}
 
 }

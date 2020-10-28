@@ -1,26 +1,74 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Header.module.scss';
 import cx from 'classnames';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
+import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import RegistrationForm from '../RegistrationForm/';
-import WishList from '../WishList/';
-import CartNavList from '../CartNavList/';
+import NavIcons from '../NavIcons/';
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
+
+const Arrow = ({ clicked, onClick }) => {
+	return (
+		<div onClick={onClick} className={styles.cardHeader}>
+			<p className={cx(styles.navTitle, styles.navTitleUp)}>Services</p>
+			<span>
+				<FontAwesomeIcon icon={clicked ? faCaretUp : faCaretDown} />
+			</span>
+		</div>
+	);
+};
+
+const productCategories = [
+	{ title: 'Accessories' },
+	{ title: 'Alcohol' },
+	{ title: 'Art' },
+	{ title: 'Books' },
+	{ title: 'Drink' },
+	{ title: 'Electronics' },
+	{ title: 'Flowers & Plants' },
+	{ title: 'Food' },
+	{ title: 'Gadgets' },
+	{ title: 'Garden' },
+	{ title: 'Grocery' },
+	{ title: 'Home' },
+	{ title: 'Jewelry' },
+	{ title: "Kids & Baby'" },
+	{ title: "Men's Fashion" },
+	{ title: 'Mobile' },
+	{ title: 'Motorcycles' },
+	{ title: 'Movies' },
+	{ title: 'Music' },
+	{ title: 'Office' },
+	{ title: 'Pets' },
+	{ title: 'Romantic' },
+	{ title: 'Sport' },
+	{ title: 'Toys' }
+];
+
+const firstCol = productCategories.slice(0, 8);
+const secondCol = productCategories.slice(8, 16);
+const thirdCol = productCategories.slice(16, 25);
 
 const Header = () => {
+	const [ clicked, setClicked ] = useState(false);
+
+	const handleClick = () => {
+		setClicked(!clicked);
+	};
+
 	return (
 		<header>
 			<Container className={styles.container}>
-				<Navbar collapseOnSelect expand="lg">
+				<Navbar collapseOnSelect expand="lg" className={styles.navbarSm}>
 					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
-					<Navbar.Brand href="#">
+					<Navbar.Brand href="#" className={styles.brand}>
 						<Link to="/">
 							<img src="/img/header/logo.png" className="d-inline-block align-top mr-2" alt="OSF logo" />
 						</Link>
@@ -31,8 +79,111 @@ const Header = () => {
 					</Navbar.Brand>
 
 					<Navbar.Collapse id="responsive-navbar-nav">
-						<Nav className={cx(styles.nav, 'ml-auto align-middle')} variant="tabs">
-							<NavDropdown className="position-static" title="SERVICES" id="collasible-nav-dropdown">
+						{/* MOBILE */}
+
+						<Nav className={cx(styles.nav, 'd-xs-flex d-sm-flex d-lg-none align-left')}>
+							{' '}
+							<Accordion>
+								<Card>
+									<Accordion.Toggle as={Card.Header} eventKey="0" className={styles.cardHeader}>
+										<Arrow clicked={clicked} onClick={handleClick} />
+									</Accordion.Toggle>
+									<Accordion.Collapse eventKey="0">
+										<Card.Body className={styles.cardBody}>
+											<Accordion>
+												<Card>
+													<Accordion.Toggle
+														as={Card.Header}
+														eventKey="5"
+														className={styles.cardHeader}
+													>
+														<p className={styles.dropSubTitle}>Product Categories</p>
+														<span>
+															<FontAwesomeIcon icon={faCaretDown} />
+														</span>
+													</Accordion.Toggle>
+													<Accordion.Collapse eventKey="5">
+														<Card.Body className={styles.cardBody}>
+															{productCategories.map(({ title }) => (
+																<p>
+																	<Link to="/error">{title}</Link>
+																</p>
+															))}
+														</Card.Body>
+													</Accordion.Collapse>
+												</Card>
+												<Card>
+													<Accordion.Toggle
+														as={Card.Header}
+														eventKey="6"
+														className={styles.cardHeader}
+													>
+														<p className={styles.dropSubTitle}>Sales</p>
+														<span>
+															<FontAwesomeIcon icon={faCaretDown} />
+														</span>
+													</Accordion.Toggle>
+													<Accordion.Collapse eventKey="6">
+														<Card.Body className={styles.cardBody}>
+															{firstCol.map(({ title }) => (
+																<p>
+																	<Link to="/error">{title}</Link>
+																</p>
+															))}
+														</Card.Body>
+													</Accordion.Collapse>
+												</Card>
+											</Accordion>
+										</Card.Body>
+									</Accordion.Collapse>
+								</Card>
+
+								<Card>
+									<Accordion.Toggle as={Card.Header} eventKey="1" className={styles.cardHeader}>
+										<p className={cx(styles.navTitle, styles.navTitleUp)}>Company</p>
+										<span>
+											<FontAwesomeIcon icon={faCaretDown} />
+										</span>
+									</Accordion.Toggle>
+									<Accordion.Collapse eventKey="1">
+										<Card.Body className={styles.cardBody}>a</Card.Body>
+									</Accordion.Collapse>
+								</Card>
+
+								<Card>
+									<Accordion.Toggle as={Card.Header} eventKey="2" className={styles.cardHeader}>
+										<p className={cx(styles.navTitle, styles.navTitleUp)}>Library</p>
+										<span>
+											<FontAwesomeIcon icon={faCaretDown} />
+										</span>
+									</Accordion.Toggle>
+									<Accordion.Collapse eventKey="2">
+										<Card.Body className={styles.cardBody}>a</Card.Body>
+									</Accordion.Collapse>
+								</Card>
+
+								<Card>
+									<Accordion.Toggle as={Card.Header} eventKey="3" className={styles.cardHeader}>
+										<p className={cx(styles.navTitle, styles.navTitleUp)}>Contact us</p>
+										<span>
+											<FontAwesomeIcon icon={faCaretDown} />
+										</span>
+									</Accordion.Toggle>
+									<Accordion.Collapse eventKey="3">
+										<Card.Body className={styles.cardBody}>a</Card.Body>
+									</Accordion.Collapse>
+								</Card>
+							</Accordion>{' '}
+							<img src="/img/header/nav_img.png" rounded className={styles.img} />
+						</Nav>
+
+						{/* DESKTOP */}
+						<Nav className={cx(styles.nav, 'ml-auto align-middle d-none d-lg-flex')} variant="tabs">
+							<NavDropdown
+								className={cx(styles.navDropdown, 'position-static')}
+								title="SERVICES"
+								id="collasible-nav-dropdown"
+							>
 								<div className={styles.navContainer}>
 									<Row className={styles.row}>
 										<Col xs={6}>
@@ -43,39 +194,28 @@ const Header = () => {
 											</Row>
 
 											<Row>
-												<Col>
-													<NavDropdown.Item>
-														<Link to="/error">Accessories</Link>
-													</NavDropdown.Item>
-													<NavDropdown.Item href="#">Alcohol</NavDropdown.Item>
-													<NavDropdown.Item href="#">Art</NavDropdown.Item>
-													<NavDropdown.Item href="#">Books</NavDropdown.Item>
-													<NavDropdown.Item href="#">Drink</NavDropdown.Item>
-													<NavDropdown.Item href="#">Electronics</NavDropdown.Item>
-													<NavDropdown.Item href="#">Flowers & Plants</NavDropdown.Item>
-													<NavDropdown.Item href="#">Food</NavDropdown.Item>
+												<Col className={styles.col}>
+													{firstCol.map(({ title }) => (
+														<NavDropdown.Item className={styles.dropdownItem}>
+															<Link to="/error">{title}</Link>
+														</NavDropdown.Item>
+													))}
 												</Col>
 
-												<Col>
-													<NavDropdown.Item href="#">Gadgets</NavDropdown.Item>
-													<NavDropdown.Item href="#">Garden</NavDropdown.Item>
-													<NavDropdown.Item href="#">Grocery</NavDropdown.Item>
-													<NavDropdown.Item href="#">Home</NavDropdown.Item>
-													<NavDropdown.Item href="#">Jewelry</NavDropdown.Item>
-													<NavDropdown.Item href="#">Kids & Baby</NavDropdown.Item>
-													<NavDropdown.Item href="#">Men's Fashion</NavDropdown.Item>
-													<NavDropdown.Item href="#">Mobile</NavDropdown.Item>
+												<Col className={styles.col}>
+													{secondCol.map(({ title }) => (
+														<NavDropdown.Item className={styles.dropdownItem}>
+															<Link to="/error">{title}</Link>
+														</NavDropdown.Item>
+													))}
 												</Col>
 
-												<Col>
-													<NavDropdown.Item href="#">Motorcycles</NavDropdown.Item>
-													<NavDropdown.Item href="#">Movies</NavDropdown.Item>
-													<NavDropdown.Item href="#">Music</NavDropdown.Item>
-													<NavDropdown.Item href="#">Office</NavDropdown.Item>
-													<NavDropdown.Item href="#">Pets</NavDropdown.Item>
-													<NavDropdown.Item href="#">Romantic</NavDropdown.Item>
-													<NavDropdown.Item href="#">Sport</NavDropdown.Item>
-													<NavDropdown.Item href="#">Toys</NavDropdown.Item>
+												<Col className={styles.col}>
+													{thirdCol.map(({ title }) => (
+														<NavDropdown.Item className={styles.dropdownItem}>
+															<Link to="/error">{title}</Link>
+														</NavDropdown.Item>
+													))}
 												</Col>
 											</Row>
 										</Col>
@@ -88,15 +228,12 @@ const Header = () => {
 											</Row>
 
 											<Row>
-												<Col>
-													<NavDropdown.Item href="#">Accessories</NavDropdown.Item>
-													<NavDropdown.Item href="#">Alcohol</NavDropdown.Item>
-													<NavDropdown.Item href="#">Art</NavDropdown.Item>
-													<NavDropdown.Item href="#">Books</NavDropdown.Item>
-													<NavDropdown.Item href="#">Drink</NavDropdown.Item>
-													<NavDropdown.Item href="#">Electronics</NavDropdown.Item>
-													<NavDropdown.Item href="#">Flowers & Plants</NavDropdown.Item>
-													<NavDropdown.Item href="#">Food</NavDropdown.Item>
+												<Col className={styles.col}>
+													{firstCol.map(({ title }) => (
+														<NavDropdown.Item className={styles.dropdownItem}>
+															<Link to="/error">{title}</Link>
+														</NavDropdown.Item>
+													))}
 												</Col>
 											</Row>
 										</Col>
@@ -135,28 +272,8 @@ const Header = () => {
 								<NavDropdown.Item href="#">UAN</NavDropdown.Item>
 							</NavDropdown>
 						</Nav>
-						<Nav className="ml-5">
-							<Nav.Item>
-								<Nav.Link className={cx(styles.navIcons, 'd-none d-md-block')} href="#">
-									<FontAwesomeIcon icon={faSearch} />
-								</Nav.Link>
-							</Nav.Item>
-							<Nav.Item>
-								<Nav.Link className={cx(styles.navIcons, 'd-none d-md-block')} href="#">
-									<RegistrationForm />
-								</Nav.Link>
-							</Nav.Item>
-							<Nav.Item>
-								<Nav.Link className={cx(styles.navIcons, 'd-none d-md-block')} href="#">
-									<WishList />
-								</Nav.Link>
-							</Nav.Item>
-							<Nav.Item>
-								<Nav.Link className={cx(styles.navIcons, 'd-none d-md-block')} href="#">
-									<CartNavList />
-								</Nav.Link>
-							</Nav.Item>
-						</Nav>
+
+						<NavIcons />
 					</Navbar.Collapse>
 				</Navbar>
 			</Container>
