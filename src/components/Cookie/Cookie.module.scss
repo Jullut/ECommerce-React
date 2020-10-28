@@ -81,3 +81,21 @@ div {
         color: #79AD1F;
     }
 }
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  
+    .modalBody {
+    
+    div {
+            width: 100%;
+        }
+    }
+
+    .btn {
+        position: relative;
+        left: 0;
+        bottom: 0;
+    
+  }
+  
+}
