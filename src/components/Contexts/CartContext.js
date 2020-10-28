@@ -9,7 +9,15 @@ const CartContextProvider = (props) => {
 		setItemsQuantity(itemsQuantity + 1);
 	};
 
-	return <CartContext.Provider value={{ itemsQuantity, addItem }}>{props.children}</CartContext.Provider>;
+	const addItemQuantity = (count) => {
+		setItemsQuantity(itemsQuantity + count);
+	};
+
+	return (
+		<CartContext.Provider value={{ itemsQuantity, addItem, addItemQuantity }}>
+			{props.children}
+		</CartContext.Provider>
+	);
 };
 
 export default CartContextProvider;

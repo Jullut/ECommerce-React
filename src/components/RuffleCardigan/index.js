@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { CartContext } from '../Contexts/CartContext';
 import styles from './RuffleCardigan.module.scss';
 import TabsList from '../TabsList';
 import { Link } from 'react-router-dom';
@@ -26,6 +27,14 @@ const RuffleCardigan = () => {
 
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
+
+	const { addItemQuantity } = useContext(CartContext);
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		addItemQuantity(count);
+		setCount('');
+	};
 
 	let productDescription =
 		'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?';
@@ -168,41 +177,45 @@ const RuffleCardigan = () => {
 								</Row>
 
 								<Row>
-									<Col xs={12} md={6} className={styles.col}>
-										<InputGroup className={styles.inputGroup}>
-											<InputGroup.Prepend>
-												<InputGroup.Text
-													className={styles.minus}
-													id="minus"
-													onClick={() => setCount(count - 1)}
-												>
-													-
-												</InputGroup.Text>
-											</InputGroup.Prepend>
-											<FormControl
-												className={styles.formControl}
-												placeholder={` ${count}`}
-												aria-label="quantity"
-												aria-describedby="quantity"
-												value={` ${count}`}
-												onChange={(e) => ({
-													count: e.target.value.replace(/\D/, '')
-												})}
-											/>
-											<InputGroup.Append>
-												<InputGroup.Text
-													className={styles.plus}
-													id="plus"
-													onClick={() => setCount(count + 1)}
-												>
-													+
-												</InputGroup.Text>
-											</InputGroup.Append>
-										</InputGroup>
-									</Col>
-									<Col>
-										<button className={styles.cartBtn}>Add to cart</button>
-									</Col>
+									<form onSubmit={handleSubmit} className={styles.formStyle}>
+										<Col xs={12} md={6} className={styles.col}>
+											<InputGroup className={styles.inputGroup}>
+												<InputGroup.Prepend>
+													<InputGroup.Text
+														className={styles.minus}
+														id="minus"
+														onClick={() => setCount(count - 1)}
+													>
+														-
+													</InputGroup.Text>
+												</InputGroup.Prepend>
+												<FormControl
+													className={styles.formControl}
+													placeholder={` ${count}`}
+													aria-label="quantity"
+													aria-describedby="quantity"
+													value={` ${count}`}
+													onChange={(e) => ({
+														count: e.target.value.replace(/\D/, '')
+													})}
+													onChange={(e) => setCount(e.target.value)}
+													required
+												/>
+												<InputGroup.Append>
+													<InputGroup.Text
+														className={styles.plus}
+														id="plus"
+														onClick={() => setCount(count + 1)}
+													>
+														+
+													</InputGroup.Text>
+												</InputGroup.Append>
+											</InputGroup>
+										</Col>
+										<Col>
+											<input className={styles.cartBtn} type="submit" value="Add to cart" />
+										</Col>
+									</form>
 								</Row>
 
 								<Row>

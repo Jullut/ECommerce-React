@@ -126,7 +126,7 @@
 
 .bigImg {
     width: 458px;
-    height: 406px;
+    height: 458px;
 }
 
 .bg {
@@ -332,6 +332,11 @@
     height: 465px;
 }
 
+.formStyle {
+    display: flex;
+    flex-direction: row;
+}
+
 @media (max-width: 480px) {
   
     .container {
@@ -415,14 +420,14 @@
     }
 
     .inputGroup {
-        margin: 25px 0 0 10%;
-        width: 28%;
+        margin: 25px 0 0 14%;
+        width: 50%;
     }
 
     .cartBtn {
         font-size: 14px;
         padding: 11px 30px;
-        margin: 25px 0 0 10%;
+        margin: 25px 0 0 13%;
         position: initial;
         display: flex;
         justify-content: left;
@@ -446,6 +451,11 @@
             margin-right: 20px;
             }
       
+    }
+
+    .formStyle {
+        display: flex;
+        flex-direction: column;
     }
     
 
