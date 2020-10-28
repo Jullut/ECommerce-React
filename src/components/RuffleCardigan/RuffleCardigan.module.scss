@@ -324,6 +324,12 @@
     position: absolute;
     top: 5%;
     left: 10%;
+    cursor: pointer;
+}
+
+.bigImgModal {
+    width: 465px;
+    height: 465px;
 }
 
 @media (max-width: 480px) {
@@ -336,7 +342,7 @@
         padding: 0;
     }
 
-    .bigImg {
+    .bigImg, .bigImgModal {
         height: 100%;
         width: 100%;
     }

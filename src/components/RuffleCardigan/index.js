@@ -16,11 +16,16 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
+import Modal from 'react-bootstrap/Modal';
 
 const RuffleCardigan = () => {
 	const [ curImg, setImg ] = useState('/img/cardigans/black.jpg');
 	const [ isExpanded, setExpanded ] = useState(false);
 	const [ count, setCount ] = useState(1);
+	const [ show, setShow ] = useState(false);
+
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
 
 	let productDescription =
 		'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?';
@@ -64,7 +69,11 @@ const RuffleCardigan = () => {
 					<div className={styles.containerProduct}>
 						<Row className={styles.row}>
 							<Col xs={12} md={5}>
-								<FontAwesomeIcon icon={faExpandArrowsAlt} className={styles.expandArrows} />
+								<FontAwesomeIcon
+									icon={faExpandArrowsAlt}
+									className={styles.expandArrows}
+									onClick={handleShow}
+								/>
 
 								<img
 									src={curImg}
@@ -234,6 +243,12 @@ const RuffleCardigan = () => {
 					</div>
 				</div>
 			</Container>
+
+			<Modal show={show} onHide={handleClose} centered size="md">
+				<Modal.Body>
+					<img src={curImg} id="currentImg" alt="Cardigan" title="Cardigan" className={styles.bigImgModal} />
+				</Modal.Body>
+			</Modal>
 		</div>
 	);
 };
