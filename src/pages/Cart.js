@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
 import '../App.scss';
 import '../assets/globalStyles/style.scss';
-import NotFound from '../components/NotFound/';
+import ShoppingCart from '../components/ShoppingCart/';
 
-export const Error = () => {
+export const Cart = () => {
 	useEffect(() => {
-		document.title = '404';
+		document.title = 'Checkout';
 	}, []);
 
 	return (
 		<div className="App">
-			<NotFound />
+			<ShoppingCart />
 		</div>
 	);
 };

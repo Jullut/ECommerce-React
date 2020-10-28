@@ -5,6 +5,7 @@ import { Error } from './pages/Error';
 import { CategoryServices } from './pages/CategoryServices';
 import { Layout } from './components/Layout';
 import { ProductPage } from './pages/ProductPage';
+import { Cart } from './pages/Cart';
 
 const Router = () => {
 	return (
@@ -14,6 +15,7 @@ const Router = () => {
 				<Route component={Error} path="/error" exact />
 				<Route component={CategoryServices} path="/categories" exact />
 				<Route component={ProductPage} path="/cardigan" exact />
+				<Route component={Cart} path="/checkout" exact />
 			</Layout>
 		</Switch>
 	);
