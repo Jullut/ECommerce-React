@@ -5,17 +5,21 @@ import { CartContext } from '../Contexts/CartContext';
 
 const CartItemsList = () => {
 	const { items } = useContext(CartContext);
-	return items.length ? (
-		<div className="todo-list">
-			<h3>
-				{items.map((item) => {
-					return <CartItem item={item} key={item.id} />;
-				})}
-			</h3>
-		</div>
-	) : (
-		<div className={styles.emtyList}>
-			<h3> Nothing yet in here... </h3>
+	return (
+		<div className={styles.div}>
+			{items.length ? (
+				<div className="todo-list">
+					<h3>
+						{items.map((item) => {
+							return <CartItem item={item} key={item.id} />;
+						})}
+					</h3>
+				</div>
+			) : (
+				<div className={styles.emtyList}>
+					<h3> Nothing yet in here... </h3>
+				</div>
+			)}
 		</div>
 	);
 };

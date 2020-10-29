@@ -11,23 +11,20 @@ const Items = ({ itemsToRender }) => {
 	const { addWish } = useContext(WishContext);
 	const { addItem, addItemCart } = useContext(CartContext);
 
-	const handleClick = () => {
-		addItem();
-		addItemCart();
-	};
-
 	return (
 		<div>
-			{itemsToRender.map(({ title, price, cardImg }) => (
-				<Card className={styles.card}>
+			{itemsToRender.map(({ title, price, cardImg, id }) => (
+				<Card className={styles.card} key={id}>
 					<Card.Img className={styles.cardImg} variant="top" src={cardImg} />
 					<Card.Body className={styles.cardBody}>
 						<Card.Title className={styles.cardTitle}>{title}</Card.Title>
-						<Card.Text className={styles.cardPrice}>{price}</Card.Text>
+						<Card.Text className={styles.cardPrice}>$ {price}</Card.Text>
 					</Card.Body>
 					<div className={styles.overlay}>
-						<div className={styles.plus} onClick={handleClick}>
-							<FontAwesomeIcon icon={faPlus} />
+						<div className={styles.plus} onClick={() => addItem()}>
+							<div onClick={() => addItemCart(id)}>
+								<FontAwesomeIcon icon={faPlus} />
+							</div>
 						</div>
 						<div className={styles.heart} onClick={() => addWish()}>
 							<FontAwesomeIcon icon={faHeart} />

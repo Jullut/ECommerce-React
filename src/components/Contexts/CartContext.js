@@ -1,18 +1,22 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 import { v4 as uuid } from 'uuid';
+import myJson from '../cardInformation.json';
+
+const itemsJson = [ ...myJson ];
 
 export const CartContext = createContext();
 
 const CartContextProvider = (props) => {
 	const [ itemsQuantity, setItemsQuantity ] = useState(0);
-	const [ items, setItems ] = useState([
-		{
-			id: uuid(),
-			title: 'Kristina Dam Oak Table With White Marble Top',
-			price: 2195,
-			img: '/img/cart/icon.png'
-		}
-	]);
+	const [ cartTotal, setCartTotal ] = useState(0);
+	const [ items, setItems ] = useState([]);
+
+	useEffect(
+		() => {
+			total();
+		},
+		[ items ]
+	);
 
 	const addItem = () => {
 		setItemsQuantity(itemsQuantity + 1);
@@ -22,24 +26,66 @@ const CartContextProvider = (props) => {
 		setItemsQuantity(itemsQuantity + count);
 	};
 
-	const addItemCart = () => {
-		setItems([
-			...items,
-			{
-				id: uuid(),
-				title: 'Kristina Dam Oak Table With White Marble Top',
-				price: 2195,
-				img: '/img/cart/icon.png'
-			}
-		]);
+	const addItemCart = (id) => {
+		const check = items.every((items) => {
+			return items.id !== id;
+		});
+		if (check) {
+			const data = itemsJson.filter((itemsJson) => {
+				return itemsJson.id === id;
+			});
+			setItems([ ...items, ...data ]);
+		} else {
+			alert('The product has been added to cart.');
+		}
 	};
 
 	const delItem = (id) => {
 		setItems(items.filter((items) => items.id !== id));
 	};
 
+	const increase = (id) => {
+		items.forEach((items) => {
+			if (items.id === id) {
+				items.count += 1;
+			}
+		});
+		total();
+	};
+
+	const decrease = (id) => {
+		items.forEach((items) => {
+			if (items.id === id) {
+				items.count === 1 ? (items.count = 1) : (items.count -= 1);
+			}
+		});
+		total();
+	};
+
+	const total = () => {
+		let totalVal = 0;
+		for (let i = 0; i < items.length; i++) {
+			totalVal += items[i].price * items[i].count;
+		}
+		let roundedVal = totalVal.toFixed(2);
+		setCartTotal(roundedVal);
+	};
+
 	return (
-		<CartContext.Provider value={{ itemsQuantity, items, addItem, addItemQuantity, addItemCart, delItem }}>
+		<CartContext.Provider
+			value={{
+				itemsQuantity,
+				cartTotal,
+				items,
+				addItem,
+				addItemQuantity,
+				addItemCart,
+				delItem,
+				decrease,
+				increase,
+				cartTotal
+			}}
+		>
 			{props.children}
 		</CartContext.Provider>
 	);

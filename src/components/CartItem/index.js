@@ -7,50 +7,46 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 
 const CartItem = ({ item }) => {
-	const { delItem } = useContext(CartContext);
-	const [ count, setCount ] = useState(1);
-
-	const priceNow = item.price * count;
+	const { delItem, increase, decrease } = useContext(CartContext);
 
 	return (
 		<div className={styles.div}>
 			<Row>
-				<Col xs={2}>
-					<img src={item.img} className={styles.img} />
+				<Col md={2}>
+					<img src="/img/cart/icon.png" className={styles.img} />
 				</Col>
-				<Col xs={5}>
+				<Col md={5}>
 					<h1 className={styles.title}>{item.title}</h1>
-					<p className={styles.smPrice}> $ {priceNow}</p>
+					<p className={styles.smPrice}> $ {item.price}</p>
 				</Col>
-				<Col xs={2}>
+				<Col md={2} className={styles.row}>
 					<InputGroup className={styles.inputGroup}>
 						<InputGroup.Prepend>
-							<InputGroup.Text className={styles.minus} id="minus" onClick={() => setCount(count - 1)}>
+							<InputGroup.Text className={styles.minus} id="minus" onClick={() => decrease(item.id)}>
 								-
 							</InputGroup.Text>
 						</InputGroup.Prepend>
 						<FormControl
 							className={styles.formControl}
-							placeholder={` ${count}`}
 							aria-label="quantity"
 							aria-describedby="quantity"
-							value={` ${count}`}
+							value={` ${item.count}`}
 							onChange={(e) => ({
 								count: e.target.value.replace(/\D/, '')
 							})}
 							required
 						/>
 						<InputGroup.Append>
-							<InputGroup.Text className={styles.plus} id="plus" onClick={() => setCount(count + 1)}>
+							<InputGroup.Text className={styles.plus} id="plus" onClick={() => increase(item.id)}>
 								+
 							</InputGroup.Text>
 						</InputGroup.Append>
 					</InputGroup>
 				</Col>
-				<Col xs={2}>
-					<p className={styles.bigPrice}> $ {priceNow}</p>
+				<Col md={2}>
+					<p className={styles.bigPrice}> $ {(item.price * item.count).toFixed(2)}</p>
 				</Col>
-				<Col xs={1}>
+				<Col md={1} className={styles.row1}>
 					<button onClick={() => delItem(item.id)} className={styles.btn}>
 						<p>x</p>
 					</button>

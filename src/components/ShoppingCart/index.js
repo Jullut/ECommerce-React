@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './ShoppingCart.module.scss';
 import { Link } from 'react-router-dom';
 import CartItemsList from '../CartItemsList/';
+import CartTotal from '../CartTotal/';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -32,6 +33,7 @@ const ShoppingCart = () => {
 					<Col>
 						<div className={styles.bg}>
 							<CartItemsList />
+							<CartTotal />
 						</div>
 					</Col>
 				</Row>
