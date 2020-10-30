@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1d7c0133.chunk.css",
+    "main.js": "/static/js/main.ae18d4c8.chunk.js",
+    "main.js.map": "/static/js/main.ae18d4c8.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a54c6ea9.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a54c6ea9.js.map",
+    "static/css/2.6a2058e8.chunk.css": "/static/css/2.6a2058e8.chunk.css",
+    "static/js/2.7a19fcb5.chunk.js": "/static/js/2.7a19fcb5.chunk.js",
+    "static/js/2.7a19fcb5.chunk.js.map": "/static/js/2.7a19fcb5.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.a7b6f96ad87db496d6f3896125995b9f.js": "/precache-manifest.a7b6f96ad87db496d6f3896125995b9f.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.6a2058e8.chunk.css.map": "/static/css/2.6a2058e8.chunk.css.map",
+    "static/css/main.1d7c0133.chunk.css.map": "/static/css/main.1d7c0133.chunk.css.map",
+    "static/js/2.7a19fcb5.chunk.js.LICENSE.txt": "/static/js/2.7a19fcb5.chunk.js.LICENSE.txt",
+    "static/media/PopularItemsLight.module.scss": "/static/media/Lato-Regular.2d36b1a9.ttf",
+    "static/media/Services.module.scss": "/static/media/MyriadPro-Regular.be82e385.ttf",
+    "static/media/slick-theme.scss": "/static/media/slick.f97e3bbf.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a54c6ea9.js",
+    "static/css/2.6a2058e8.chunk.css",
+    "static/js/2.7a19fcb5.chunk.js",
+    "static/css/main.1d7c0133.chunk.css",
+    "static/js/main.ae18d4c8.chunk.js"
+  ]
+}
