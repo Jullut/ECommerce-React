@@ -50,9 +50,9 @@ const PopularItems = () => {
 
 				<Row className="d-xs-block d-sm-block d-md-none">
 					<Carousel prevIcon={null} nextIcon={null} className={styles.carousel}>
-						{smItems.map(({ cardImg, title, price }) => (
+						{smItems.map(({ cardImg, title, price, id }) => (
 							<Carousel.Item>
-								<CustomCard cardImg={cardImg} title={title} price={price} />
+								<CustomCard cardImg={cardImg} title={title} price={price} id={id} />
 							</Carousel.Item>
 						))}
 					</Carousel>

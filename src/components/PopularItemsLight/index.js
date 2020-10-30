@@ -10,22 +10,22 @@ import Carousel from 'react-bootstrap/Carousel';
 const cards = [
 	{
 		title: 'Kristina Dam Oak Table With White Marble Top',
-		price: '$ 799.55',
+		price: '799.55',
 		cardImg: '/img/popularItems/item11.png'
 	},
 	{
 		title: 'Kristina Dam Oak Table With White Marble Top',
-		price: '$ 2195.00',
+		price: '2195.00',
 		cardImg: '/img/popularItems/item13.png'
 	},
 	{
 		title: 'Activate Facial Mask and Charcoal Soap',
-		price: '$ 129.55',
+		price: '129.55',
 		cardImg: '/img/popularItems/item4.png'
 	},
 	{
 		title: 'Kristina Dam Oak Table With White Marble Top',
-		price: '$ 629.99',
+		price: '629.99',
 		cardImg: '/img/popularItems/item14.png'
 	}
 ];

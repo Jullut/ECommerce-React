@@ -273,7 +273,9 @@ const Header = () => {
 							</NavDropdown>
 						</Nav>
 
-						<NavIcons className="d-none d-lg-block" />
+						<div className="d-none d-lg-block">
+							<NavIcons />
+						</div>
 					</Navbar.Collapse>
 				</Navbar>
 			</Container>
