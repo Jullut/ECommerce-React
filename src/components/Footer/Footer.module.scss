@@ -11,7 +11,7 @@
 	padding: 40px 20px 10px 20px;
 }
 
-.contactText {
+.contactText, .link a {
 	color: #45413e;
 	font-family: 'Lato';
 	font-size: 13px;
@@ -66,19 +66,6 @@
 	text-align: left;
 }
 
-.icons {
-
-	a {
-		opacity: 0.7;
-	color: #45413e;
-	}
-}
-
-.icon {
-	margin-right: 20px;
-}
-
-
 @media (min-width: 320px) and (max-width: 767px) {
   	.cardHeader {
 	  background-color: white;
@@ -108,9 +95,5 @@
 
 	.container {
 		padding-top: 20px;
-	}
-
-	.icons {
-		font-size: 20px;
 	}
 }

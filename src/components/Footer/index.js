@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import styles from './Footer.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
+import SocialMedia from '../SocialMedia/';
 
 const Arrow = ({ clicked, onClick }) => {
 	return (
@@ -40,6 +42,32 @@ const Arrow2 = ({ clicked2, onClick }) => {
 		</div>
 	);
 };
+
+const categoriest = [
+	{ title: 'Alcohol' },
+	{ title: 'Art' },
+	{ title: 'Books' },
+	{ title: 'Drink' },
+	{ title: 'Electronics' },
+	{ title: 'Home' },
+	{ title: 'Jewelry' },
+	{ title: "Kids & Baby'" },
+	{ title: "Men's Fashion" },
+	{ title: 'Mobile' },
+	{ title: 'Motorcycles' },
+	{ title: 'Movies' },
+	{ title: 'Music' },
+	{ title: 'Sport' },
+	{ title: 'Toys' },
+	{ title: 'Travel' },
+	{ title: "Women's Fashion" }
+];
+
+const about = [ { title: 'About us' }, { title: 'Delivery' }, { title: 'Testimonials' }, { title: 'Contact' } ];
+
+const firstCol = categoriest.slice(0, 5);
+const secondCol = categoriest.slice(5, 13);
+const thirdCol = categoriest.slice(13, 17);
 
 export default class Footer extends Component {
 	state = { clicked: false, clicked1: false, clicked2: false };
@@ -92,23 +120,11 @@ export default class Footer extends Component {
 									</Accordion.Toggle>
 									<Accordion.Collapse eventKey="1">
 										<Card.Body className={styles.cardBody}>
-											<a>Alcohol</a> <br />
-											<a>Art</a> <br />
-											<a>Books</a> <br />
-											<a>Drink</a> <br />
-											<a>Electronics</a>
-											<a>Home</a> <br />
-											<a>Jewelry</a> <br />
-											<a>Kids & Baby</a> <br />
-											<a>Men's Fashion</a> <br />
-											<a>Mobile</a> <br />
-											<a>Motorcycles</a> <br />
-											<a>Movies</a> <br />
-											<a>Music</a>
-											<a>Sport</a> <br />
-											<a>Toys</a> <br />
-											<a>Travel</a> <br />
-											<a>Women's Fashion</a>
+											{categoriest.map(({ title }) => (
+												<div>
+													<Link to="/error">{title}</Link> <br />
+												</div>
+											))}
 										</Card.Body>
 									</Accordion.Collapse>
 								</Card>
@@ -119,29 +135,17 @@ export default class Footer extends Component {
 									</Accordion.Toggle>
 									<Accordion.Collapse eventKey="2">
 										<Card.Body className={styles.cardBody}>
-											<a>About us</a> <br />
-											<a>Delivery</a> <br />
-											<a>Testimonials</a> <br />
-											<a>Contact</a>
+											{about.map(({ title }) => (
+												<div>
+													<Link to="/error">{title}</Link> <br />
+												</div>
+											))}
 										</Card.Body>
 									</Accordion.Collapse>
 								</Card>
 							</Accordion>
 
-							<span className={styles.icons}>
-								<a href="https://www.facebook.com/">
-									<FontAwesomeIcon icon={[ 'fab', 'facebook-f' ]} className={styles.icon} />
-								</a>
-								<a href="https://www.google.com.ua/">
-									<FontAwesomeIcon icon={[ 'fab', 'google-plus-g' ]} className={styles.icon} />
-								</a>
-								<a href="https://twitter.com/">
-									<FontAwesomeIcon icon={[ 'fab', 'twitter' ]} className={styles.icon} />
-								</a>
-								<a href="https://www.pinterest.com/">
-									<FontAwesomeIcon icon={[ 'fab', 'pinterest-p' ]} />
-								</a>
-							</span>
+							<SocialMedia />
 						</Col>
 					</Row>
 
@@ -172,27 +176,25 @@ export default class Footer extends Component {
 							</Row>
 							<Row className={styles.footItem}>
 								<Col>
-									<a>Alcohol</a> <br />
-									<a>Art</a> <br />
-									<a>Books</a> <br />
-									<a>Drink</a> <br />
-									<a>Electronics</a>
+									{firstCol.map(({ title }) => (
+										<div className={styles.link}>
+											<Link to="/error">{title}</Link> <br />
+										</div>
+									))}
 								</Col>
 								<Col>
-									<a>Home</a> <br />
-									<a>Jewelry</a> <br />
-									<a>Kids & Baby</a> <br />
-									<a>Men's Fashion</a> <br />
-									<a>Mobile</a> <br />
-									<a>Motorcycles</a> <br />
-									<a>Movies</a> <br />
-									<a>Music</a>
+									{secondCol.map(({ title }) => (
+										<div className={styles.link}>
+											<Link to="/error">{title}</Link> <br />
+										</div>
+									))}
 								</Col>
 								<Col>
-									<a>Sport</a> <br />
-									<a>Toys</a> <br />
-									<a>Travel</a> <br />
-									<a>Women's Fashion</a>
+									{thirdCol.map(({ title }) => (
+										<div className={styles.link}>
+											<Link to="/error">{title}</Link> <br />
+										</div>
+									))}
 								</Col>
 							</Row>
 						</Col>
@@ -205,31 +207,17 @@ export default class Footer extends Component {
 							</Row>
 							<Row className={styles.footItem}>
 								<Col>
-									<a>About us</a> <br />
-									<a>Delivery</a> <br />
-									<a>Testimonials</a> <br />
-									<a>Contact</a>
+									{about.map(({ title }) => (
+										<div className={styles.link}>
+											<Link to="/error">{title}</Link> <br />
+										</div>
+									))}
 								</Col>
 							</Row>
 						</Col>
 
 						<Col xs={2}>
-							<Row className={styles.icons}>
-								<Col>
-									<a href="https://www.facebook.com/">
-										<FontAwesomeIcon icon={[ 'fab', 'facebook-f' ]} className={styles.icon} />
-									</a>
-									<a href="https://www.google.com.ua/">
-										<FontAwesomeIcon icon={[ 'fab', 'google-plus-g' ]} className={styles.icon} />
-									</a>
-									<a href="https://twitter.com/">
-										<FontAwesomeIcon icon={[ 'fab', 'twitter' ]} className={styles.icon} />
-									</a>
-									<a href="https://www.pinterest.com/">
-										<FontAwesomeIcon icon={[ 'fab', 'pinterest-p' ]} />
-									</a>
-								</Col>
-							</Row>
+							<SocialMedia />
 						</Col>
 					</Row>
 				</Container>
