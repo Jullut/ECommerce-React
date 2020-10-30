@@ -13,7 +13,6 @@ import Col from 'react-bootstrap/Col';
 import NavIcons from '../NavIcons/';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
-import logo from '/img/header/logo.png';
 
 const Arrow = ({ clicked, onClick }) => {
 	return (
@@ -71,7 +70,7 @@ const Header = () => {
 					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 					<Navbar.Brand href="#" className={styles.brand}>
 						<Link to="/">
-							<img src={logo} className="d-inline-block align-top mr-2" alt="OSF logo" />
+							<img src="./img/header/logo.png" className="d-inline-block align-top mr-2" alt="OSF logo" />
 						</Link>
 						<div className="d-md-inline-block align-middle d-none">
 							<span className={cx(styles.logoText, 'd-block pb-2')}>OSF</span>
