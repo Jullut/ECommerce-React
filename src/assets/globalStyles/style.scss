@@ -82,7 +82,11 @@
 }
 
 .nav-link {
-	padding: 1rem 2rem;
+	padding: 0;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	color: inherit
 }
 
 @media (min-width: 769px) {

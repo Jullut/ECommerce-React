@@ -12,22 +12,22 @@ const NavIcons = () => {
 	return (
 		<Nav className="ml-5" className={styles.nav}>
 			<Nav.Item>
-				<Nav.Link className={cx(styles.navIcons, 'd-none d-lg-block')} href="#">
+				<Nav.Link className={styles.navIcons} href="#">
 					<FontAwesomeIcon icon={faSearch} />
 				</Nav.Link>
 			</Nav.Item>
 			<Nav.Item>
-				<Nav.Link className={cx(styles.navIcons, 'd-none d-lg-block')} href="#">
+				<Nav.Link className={styles.navIcons} href="#">
 					<RegistrationForm />
 				</Nav.Link>
 			</Nav.Item>
 			<Nav.Item>
-				<Nav.Link className={cx(styles.navIcons, 'd-none d-lg-block')} href="#">
+				<Nav.Link className={styles.navIcons} href="#">
 					<WishList />
 				</Nav.Link>
 			</Nav.Item>
 			<Nav.Item>
-				<Nav.Link className={cx(styles.navIcons, 'd-none d-lg-block')} href="#">
+				<Nav.Link className={styles.navIcons} href="#">
 					<CartNavList />
 				</Nav.Link>
 			</Nav.Item>

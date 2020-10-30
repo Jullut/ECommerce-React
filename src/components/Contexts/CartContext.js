@@ -1,5 +1,4 @@
 import React, { useState, createContext, useEffect } from 'react';
-import { v4 as uuid } from 'uuid';
 import myJson from '../cardInformation.json';
 
 const itemsJson = [ ...myJson ];
