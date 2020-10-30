@@ -8,7 +8,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
-import cx from 'classnames';
 
 export default class FeaturedProducts extends Component {
 	constructor(props) {
@@ -32,6 +31,34 @@ export default class FeaturedProducts extends Component {
 			arrows: false
 		};
 
+		const cards = [
+			{
+				img: '/img/featuredProducts/prod1.png',
+				title: 'Kristina Dam Oak Table With White Marble',
+				text: 'Awesome'
+			},
+			{
+				img: '/img/featuredProducts/prod2.png',
+				title: 'Kristina Dam Oak Table With White Marble',
+				text: 'Marketing'
+			},
+			{
+				img: '/img/featuredProducts/prod3.png',
+				title: 'Kristina Dam Oak Table With White Marble',
+				text: 'Awesome'
+			},
+			{
+				img: '/img/featuredProducts/prod4.png',
+				title: 'Hezy Theme',
+				text: 'Marketing'
+			},
+			{
+				img: '/img/featuredProducts/prod2.png',
+				title: 'Kristina Dam Oak Table With White Marble',
+				text: 'Marketing'
+			}
+		];
+
 		return (
 			<div className={styles.products}>
 				<Container className={styles.bg}>
@@ -50,91 +77,19 @@ export default class FeaturedProducts extends Component {
 					<Row className={styles.secondRow}>
 						<Col>
 							<Slider ref={(c) => (this.slider = c)} {...settings} slickPrev={null}>
-								<div>
-									<Card className={styles.card}>
-										<Link to="/cardigan">
-											<Card.Img
-												slassName={styles.cardImg}
-												variant="top"
-												src="/img/featuredProducts/prod1.png"
-											/>
-											<Card.Body>
-												<Card.Title className={styles.cardMainText}>
-													Kristina Dam Oak Table With White Marble
-												</Card.Title>
-												<Card.Text className={styles.cardSubText}>Awesome</Card.Text>
-											</Card.Body>
-										</Link>
-									</Card>
-								</div>
-								<div>
-									<Card className={styles.card}>
-										<Link to="/cardigan">
-											<Card.Img
-												slassName={styles.cardImg}
-												variant="top"
-												src="/img/featuredProducts/prod2.png"
-											/>
-											<Card.Body>
-												<Card.Title className={styles.cardMainText}>
-													Kristina Dam Oak Table With White Marble
-												</Card.Title>
-												<Card.Text className={styles.cardSubText}>Marketing</Card.Text>
-											</Card.Body>
-										</Link>
-									</Card>
-								</div>
-								<div>
-									<Card className={styles.card}>
-										<Link to="/cardigan">
-											<Card.Img
-												slassName={styles.cardImg}
-												variant="top"
-												src="/img/featuredProducts/prod3.png"
-											/>
-											<Card.Body>
-												<Card.Title className={styles.cardMainText}>
-													Kristina Dam Oak Table With White Marble
-												</Card.Title>
-												<Card.Text className={styles.cardSubText}>Awesome</Card.Text>
-											</Card.Body>
-										</Link>
-									</Card>
-								</div>
-								<div>
-									<Card className={styles.card}>
-										<Link to="/cardigan">
-											<Card.Img
-												slassName={styles.cardImg}
-												variant="top"
-												src="/img/featuredProducts/prod4.png"
-											/>
-											<Card.Body className={styles.cardHeight}>
-												<Card.Title className={cx(styles.cardMainText, styles.cardDown)}>
-													Hezy Theme
-												</Card.Title>
-												<Card.Text className={styles.cardSubText}>Marketing</Card.Text>
-											</Card.Body>
-										</Link>
-									</Card>
-								</div>
-								<div>
-									<Card className={styles.card}>
-										<Link to="/cardigan">
-											<Card.Img
-												slassName={styles.cardImg}
-												variant="top"
-												src="/img/featuredProducts/prod2.png"
-											/>
-											<Card.Body>
-												<Card.Title className={styles.cardMainText}>
-													Kristina Dam Oak Table With White Marble
-												</Card.Title>
-												<Card.Text className={styles.cardSubText}>Marketing</Card.Text>
-											</Card.Body>
-										</Link>
-									</Card>
-								</div>
+								{cards.map(({ img, title, text }) => (
+									<div>
+										<Card className={styles.card}>
+											<Link to="/cardigan">
+												<Card.Img slassName={styles.cardImg} variant="top" src={img} />
+												<Card.Body className={styles.cardHeight}>
+													<Card.Title className={styles.cardMainText}>{title}</Card.Title>
+													<Card.Text className={styles.cardSubText}>{text}</Card.Text>
+												</Card.Body>
+											</Link>
+										</Card>
+									</div>
+								))}
 							</Slider>
 						</Col>
 					</Row>
