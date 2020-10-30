@@ -18,6 +18,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import Modal from 'react-bootstrap/Modal';
+import SocialMedia from '../SocialMedia/';
 
 const RuffleCardigan = () => {
 	const [ curImg, setImg ] = useState('/img/cardigans/black.jpg');
@@ -47,6 +48,25 @@ const RuffleCardigan = () => {
 		slidesToScroll: 1,
 		arrows: false
 	};
+
+	const products = [
+		{
+			smImg: '/img/cardigans/black_sm.jpg',
+			bigImg: 'img/cardigans/black.jpg'
+		},
+		{
+			smImg: '/img/cardigans/black_back_sm.jpg',
+			bigImg: 'img/cardigans/black_back.jpg'
+		},
+		{
+			smImg: '/img/cardigans/mint_sm.jpg',
+			bigImg: 'img/cardigans/mint.jpg'
+		},
+		{
+			smImg: '/img/cardigans/mint_back_sm.jpg',
+			bigImg: 'img/cardigans/mint_back.jpg'
+		}
+	];
 
 	return (
 		<div>
@@ -94,58 +114,20 @@ const RuffleCardigan = () => {
 							</Col>
 							<Col md={3} className="d-none d-md-block">
 								<ul className={styles.colorpicker}>
-									<li>
-										<img
-											src="/img/cardigans/black_sm.jpg"
-											onClick={() => setImg('img/cardigans/black.jpg')}
-										/>
-									</li>
-									<li>
-										<img
-											src="/img/cardigans/black_back_sm.jpg"
-											onClick={() => setImg('img/cardigans/black_back.jpg')}
-										/>
-									</li>
-									<li>
-										<img
-											src="/img/cardigans/mint_sm.jpg"
-											onClick={() => setImg('/img/cardigans/mint.jpg')}
-										/>
-									</li>
-									<li>
-										<img
-											src="/img/cardigans/mint_back_sm.jpg"
-											onClick={() => setImg('/img/cardigans/mint_back.jpg')}
-										/>
-									</li>
+									{products.map(({ smImg, bigImg }) => (
+										<li>
+											<img src={smImg} onClick={() => setImg(bigImg)} />
+										</li>
+									))}
 								</ul>
 							</Col>
 							<Col className="d-xs-block d-sm-block d-md-none">
 								<Slider {...settings} className={styles.colorpicker}>
-									<div>
-										<img
-											src="/img/cardigans/black_sm.jpg"
-											onClick={() => setImg('img/cardigans/black.jpg')}
-										/>
-									</div>
-									<div>
-										<img
-											src="/img/cardigans/black_back_sm.jpg"
-											onClick={() => setImg('img/cardigans/black_back.jpg')}
-										/>
-									</div>
-									<div>
-										<img
-											src="/img/cardigans/mint_sm.jpg"
-											onClick={() => setImg('/img/cardigans/mint.jpg')}
-										/>
-									</div>
-									<div>
-										<img
-											src="/img/cardigans/mint_back_sm.jpg"
-											onClick={() => setImg('/img/cardigans/mint_back.jpg')}
-										/>
-									</div>
+									{products.map(({ smImg, bigImg }) => (
+										<div>
+											<img src={smImg} onClick={() => setImg(bigImg)} />
+										</div>
+									))}
 								</Slider>
 							</Col>
 							<Col>
@@ -233,21 +215,10 @@ const RuffleCardigan = () => {
 									</Col>
 								</Row>
 
-								<Row className={styles.icons}>
+								<div className={styles.icons}>
 									<span className={styles.share}>Share</span>
-									<a href="https://www.facebook.com/">
-										<FontAwesomeIcon icon={[ 'fab', 'facebook-f' ]} className={styles.icon} />
-									</a>
-									<a href="https://www.google.com.ua/">
-										<FontAwesomeIcon icon={[ 'fab', 'google-plus-g' ]} className={styles.icon} />
-									</a>
-									<a href="https://twitter.com/">
-										<FontAwesomeIcon icon={[ 'fab', 'twitter' ]} className={styles.icon} />
-									</a>
-									<a href="https://www.pinterest.com/">
-										<FontAwesomeIcon icon={[ 'fab', 'pinterest-p' ]} />
-									</a>
-								</Row>
+									<SocialMedia />
+								</div>
 							</Col>
 						</Row>
 					</div>

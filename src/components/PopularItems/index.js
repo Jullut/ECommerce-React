@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import styles from './PopularItems.module.scss';
 import myJson from '../cardInformation.json';
-import { v4 as uuid } from 'uuid';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUndoAlt } from '@fortawesome/free-solid-svg-icons';
@@ -36,6 +35,8 @@ const PopularItems = () => {
 		setNext(next + itemsPerPage);
 	};
 
+	const smItems = items.slice(0, 5);
+
 	return (
 		<div>
 			<Container className={styles.bg}>
@@ -49,45 +50,11 @@ const PopularItems = () => {
 
 				<Row className="d-xs-block d-sm-block d-md-none">
 					<Carousel prevIcon={null} nextIcon={null} className={styles.carousel}>
-						<Carousel.Item>
-							<CustomCard
-								cardImg="/img/popularItems/item2.png"
-								title="Kristina Dam Oak Table With White Marble Top"
-								price="$ 799.55"
-							/>
-						</Carousel.Item>
-
-						<Carousel.Item>
-							<CustomCard
-								cardImg="/img/popularItems/item3.png"
-								title="Activate Facial Mask and Charcoal Soap"
-								price="$ 129.55"
-							/>
-						</Carousel.Item>
-
-						<Carousel.Item>
-							<CustomCard
-								cardImg="/img/popularItems/item4.png"
-								title="Kristina Dam Oak Table With White Marble Top"
-								price="$ 299.99"
-							/>
-						</Carousel.Item>
-
-						<Carousel.Item>
-							<CustomCard
-								cardImg="/img/popularItems/item5.png"
-								title="Hay - About A Lounge Chair AAL 93"
-								price="$ 659.55"
-							/>
-						</Carousel.Item>
-
-						<Carousel.Item>
-							<CustomCard
-								cardImg="/img/popularItems/item6.png"
-								title="Activate Facial Mask and Charcoal Soap"
-								price="$ 410.99"
-							/>
-						</Carousel.Item>
+						{smItems.map(({ cardImg, title, price }) => (
+							<Carousel.Item>
+								<CustomCard cardImg={cardImg} title={title} price={price} />
+							</Carousel.Item>
+						))}
 					</Carousel>
 				</Row>
 

@@ -299,6 +299,8 @@
 
 
 .icons {
+    display: flex;
+    flex-direction: row;
     color: #B2B2B2;
 
         a {
@@ -315,7 +317,7 @@
         letter-spacing: normal;
         line-height: 26px;
         text-align: left;
-        margin-right: 30px;
+        margin-right: 40px;
         }
 }
 

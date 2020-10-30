@@ -3,7 +3,6 @@ import styles from './PopularItemsLight.module.scss';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
 import CardColumns from 'react-bootstrap/CardColumns';
 import CustomCard from '../CustomCard';
 import Carousel from 'react-bootstrap/Carousel';
@@ -43,37 +42,11 @@ const PopularItemsLight = () => {
 
 				<Row className="d-xs-block d-sm-block d-md-none">
 					<Carousel prevIcon={null} nextIcon={null} className={styles.carousel}>
-						<Carousel.Item>
-							<CustomCard
-								cardImg="/img/popularItems/item11.png"
-								title="Kristina Dam Oak Table With White Marble Top"
-								price="$ 799.55"
-							/>
-						</Carousel.Item>
-
-						<Carousel.Item>
-							<CustomCard
-								cardImg="/img/popularItems/item13.png"
-								title="Kristina Dam Oak Table With White Marble Top"
-								price="$ 2195.00"
-							/>
-						</Carousel.Item>
-
-						<Carousel.Item>
-							<CustomCard
-								cardImg="/img/popularItems/item4.png"
-								title="Activate Facial Mask and Charcoal Soap"
-								price="$ 129.55"
-							/>
-						</Carousel.Item>
-
-						<Carousel.Item>
-							<CustomCard
-								cardImg="/img/popularItems/item14.png"
-								title="Kristina Dam Oak Table With White Marble Top"
-								price="$ 629.99"
-							/>
-						</Carousel.Item>
+						{cards.map(({ cardImg, title, price }) => (
+							<Carousel.Item>
+								<CustomCard cardImg={cardImg} title={title} price={price} />
+							</Carousel.Item>
+						))}
 					</Carousel>
 				</Row>
 

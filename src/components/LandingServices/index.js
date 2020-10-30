@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import styles from './LandingServices.module.scss';
 import myJson from '../cardInformation.json';
 import Filter from '../Filter';
-import CustomCard from '../CustomCard';
 import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -98,9 +97,7 @@ const LandingServices = () => {
 
 					<Col className="d-xs-flex d-sm-flex d-md-none">
 						<CardColumns className={styles.cardColumns}>
-							{smItems.map(({ title, price, cardImg }) => (
-								<CustomCard cardImg={cardImg} title={title} price={price} />
-							))}
+							<Items itemsToRender={smItems} />
 						</CardColumns>
 					</Col>
 				</Row>
